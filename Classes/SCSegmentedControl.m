@@ -29,6 +29,17 @@
 
 @implementation SCSegmentedControl
 
+@synthesize colorScheme = _colorScheme;
+
+- (void)setColorScheme:(SCSegmentColorScheme)value {
+
+	if (_colorScheme != value) {
+	
+		_colorScheme = value;
+		[self setNeedsLayout];
+	}
+}
+
 @synthesize columnCount = _columnCount, rowCount = _rowCount;
 @synthesize segmentTitles = _segmentTitles;
 @synthesize selectedIndex = _selectedIndex;
@@ -148,6 +159,7 @@
 			
 			SCSegment *segment = [SCSegment segmentWithStyle:SCSegmentCenter];
 			
+			segment.colorScheme = self.colorScheme;
 			segment.frame = CGRectMake(buttonOffsetX, segmentOffsetY, segmentWidth, kRowHeight);
 			segment.tag = titleIndex;
 			segment.titleLabel.font = [UIFont boldSystemFontOfSize:14];

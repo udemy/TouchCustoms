@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5501ADF3116F552D0085A394 /* SCSegmentColorScheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 5501ADF2116F552D0085A394 /* SCSegmentColorScheme.h */; };
 		551490A01149012600B7E4DA /* SCRadioCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909C1149012600B7E4DA /* SCRadioCell.h */; };
 		551490A11149012600B7E4DA /* SCRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5514909D1149012600B7E4DA /* SCRadioCell.m */; };
 		551490A21149012600B7E4DA /* SCRadioController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909E1149012600B7E4DA /* SCRadioController.h */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5501ADF2116F552D0085A394 /* SCSegmentColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCSegmentColorScheme.h; path = Classes/SCSegmentColorScheme.h; sourceTree = "<group>"; };
 		5514909C1149012600B7E4DA /* SCRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRadioCell.h; path = Classes/SCRadioCell.h; sourceTree = "<group>"; };
 		5514909D1149012600B7E4DA /* SCRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRadioCell.m; path = Classes/SCRadioCell.m; sourceTree = "<group>"; };
 		5514909E1149012600B7E4DA /* SCRadioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRadioController.h; path = Classes/SCRadioController.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				5514909D1149012600B7E4DA /* SCRadioCell.m */,
 				5514909E1149012600B7E4DA /* SCRadioController.h */,
 				5514909F1149012600B7E4DA /* SCRadioController.m */,
+				5501ADF2116F552D0085A394 /* SCSegmentColorScheme.h */,
 				559FC9B2111AE3F500A3A532 /* SCSegment.h */,
 				559FC9B3111AE3F500A3A532 /* SCSegment.m */,
 				559FC9B4111AE3F500A3A532 /* SCSegmentedControl.h */,
@@ -302,6 +305,7 @@
 				555A3A87114D605F0040850F /* UIAlertView+SCMethods.h in Headers */,
 				5553ADE0114FB58D0088FC57 /* SCActivityIndicatorCell.h in Headers */,
 				55B66083115B7087009F3D3B /* UIActionSheet+SCMethods.h in Headers */,
+				5501ADF3116F552D0085A394 /* SCSegmentColorScheme.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +405,10 @@
 				GCC_PREFIX_HEADER = TouchCustoms_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "SC_LOG_LEVEL=2";
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
 				PRODUCT_NAME = TouchCustoms;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -416,7 +423,10 @@
 				GCC_PREFIX_HEADER = TouchCustoms_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "SC_LOG_LEVEL=2";
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
 				PRODUCT_NAME = TouchCustoms;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

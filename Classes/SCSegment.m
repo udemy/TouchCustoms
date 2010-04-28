@@ -29,6 +29,7 @@
 
 @implementation SCSegment
 
+@synthesize colorScheme = _colorScheme;
 @synthesize selected = _selected;
 @synthesize style = _style;
 @synthesize titleLabel = _titleLabel;
@@ -113,17 +114,41 @@
 
 @end
 
-#define kSCSegmentBorderWidth	1.
-#define kSCSegmentCornerRadius	10.
 
-@implementation SCSegment (Drawing)
+#define kForeColorArraySize	16
 
-static CGFloat _BorderComponents[2][8] = {
+static CGFloat _DefaultForeColor[kForeColorArraySize] = {
+	/* Stop 1 */ .15, .36, .73, 1,
+	/* Stop 2 */ .21, .49, .92, 1,
+	/* Stop 3 */ .27, .53, .93, 1,
+	/* Stop 4 */ .42, .65, .99, 1
+};
+
+static CGFloat _BlackOpaqueForeColor[kForeColorArraySize] = {	
+	/* Stop 1 */ .01, .01, .01, 1,
+	/* Stop 2 */ .11, .11, .11, 1,
+	/* Stop 3 */ .16, .16, .16, 1,
+	/* Stop 4 */ .29, .29, .29, 1
+};
+
+#define kBorderWidth			1.
+#define kCornerRadius			10.
+#define kBorderStates			2
+#define kBorderComponentCount	kBorderStates * 4
+
+static CGFloat _DefaultBorderComponents[kBorderStates][kBorderComponentCount] = {
 	/* Default */ { /* Stop 1 */ .68, .68, .68, 1, /* Stop 2 */ .61, .61, .61, 1 },
 	/* Selected */ { /* Stop 1 */ 0, .2, .53, 1, /* Stop 2 */ .3, .53, .88, 1 }
 };
 
+static CGFloat _BlackOpaqueBorderComponents[kBorderStates][kBorderComponentCount] = {
+	/* Default */ { /* Stop 1 */ .68, .68, .68, 1, /* Stop 2 */ .61, .61, .61, 1 },
+	/* Selected */ { /* Stop 1 */ .01, .01, .01, 1, /* Stop 2 */ .29, .29, .29, 1 }
+};
+
 static CGFloat _BorderLocations[2] = { 0, 1 };
+
+@implementation SCSegment (Drawing)
 
 - (void)drawRect:(CGRect)rect {
 	
@@ -142,8 +167,20 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 	
 	[self clipBackground:context];
 	
-	CGGradientRef borderGradient = CGGradientCreateWithColorComponents(gradientColorSpace, _BorderComponents[self.selected], _BorderLocations, 2);
-	CGContextDrawLinearGradient(context, borderGradient, gradientStartPoint, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
+	CGFloat *borderComponents;
+	
+	if (SCSegmentColorSchemeBlackOpaque == self.colorScheme) {
+		borderComponents = _BlackOpaqueBorderComponents[self.selected];
+	} else {
+		borderComponents = _DefaultBorderComponents[self.selected];
+	}
+
+	CGGradientRef borderGradient = CGGradientCreateWithColorComponents(gradientColorSpace
+																	   , borderComponents
+																	   , _BorderLocations
+																	   , 2);
+	CGContextDrawLinearGradient(context, borderGradient, gradientStartPoint
+								, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
 	
 	/* Foreground */
 	
@@ -151,17 +188,20 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 	
 	if (self.selected) {
 		
-		CGFloat foreComponents[16] = {
-			/* Stop 1 */ .15, .36, .73, 1,
-			/* Stop 2 */ .21, .49, .92, 1,
-			/* Stop 3 */ .27, .53, .93, 1,
-			/* Stop 4 */ .42, .65, .99, 1
-		};
+		CGFloat *colorScheme;
+		
+		if (SCSegmentColorSchemeBlackOpaque == self.colorScheme) {
+			colorScheme = _BlackOpaqueForeColor;
+		} else {
+			colorScheme = _DefaultForeColor;
+		}
+		
 		CGFloat foreLocations[4] = { 0, .5, .5, 1 };
-		CGGradientRef foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, foreComponents, foreLocations, 4);
+		CGGradientRef foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, colorScheme
+																		 , foreLocations, 4);
 		
-		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
-		
+		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint
+									, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
 	} else {
 		
 		CGFloat foreComponents[8] = {
@@ -169,9 +209,10 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 			/* Stop 2 */ .78, .78, .78, 1
 		};
 		CGFloat foreLocations[2] = { 0, 1 };
-		CGGradientRef foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, foreComponents, foreLocations, 2);
-		
-		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
+		CGGradientRef foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, foreComponents
+																		 , foreLocations, 2);
+		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint
+									, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
 	}
 }
 
@@ -193,21 +234,19 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 	
 	if (self.selected) {
 		
-		foreRect = CGRectMake(left + kSCSegmentBorderWidth, top + kSCSegmentBorderWidth,
-							  width - kSCSegmentBorderWidth, height - kSCSegmentBorderWidth * 2);
+		foreRect = CGRectMake(left + kBorderWidth, top + kBorderWidth, width - kBorderWidth, height - kBorderWidth * 2);
 		
 	} else {
 		
-		foreRect = CGRectMake(left, top + kSCSegmentBorderWidth,
-							  width - kSCSegmentBorderWidth, height - kSCSegmentBorderWidth * 2);
+		foreRect = CGRectMake(left, top + kBorderWidth, width - kBorderWidth, height - kBorderWidth * 2);
 		
 		switch (self.style) {
 			case SCSegmentLeftRound:
 			case SCSegmentLeftBottomRound:
 			case SCSegmentLeftTopRound:
 			case SCSegmentLeft:
-				foreRect.origin.x += kSCSegmentBorderWidth;
-				foreRect.size.width -= kSCSegmentBorderWidth;
+				foreRect.origin.x += kBorderWidth;
+				foreRect.size.width -= kBorderWidth;
 				break;
 		}
 	}
@@ -216,25 +255,25 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 }
 
 - (void)clipCore:(CGContextRef)c rect:(CGRect)rect {
-
+	
 	switch (self.style) {
 		case SCSegmentLeftRound:
-			SCContextAddLeftRoundedRect(c, rect, kSCSegmentCornerRadius);
+			SCContextAddLeftRoundedRect(c, rect, kCornerRadius);
 			break;
 		case SCSegmentLeftBottomRound:
-			SCContextAddLeftBottomRoundedRect(c, rect, kSCSegmentCornerRadius);
+			SCContextAddLeftBottomRoundedRect(c, rect, kCornerRadius);
 			break;
 		case SCSegmentLeftTopRound:
-			SCContextAddLeftTopRoundedRect(c, rect, kSCSegmentCornerRadius);
+			SCContextAddLeftTopRoundedRect(c, rect, kCornerRadius);
 			break;
 		case SCSegmentRightRound:
-			SCContextAddRightRoundedRect(c, rect, kSCSegmentCornerRadius);
+			SCContextAddRightRoundedRect(c, rect, kCornerRadius);
 			break;
 		case SCSegmentRightTopRound:
-			SCContextAddRightTopRoundedRect(c, rect, kSCSegmentCornerRadius);
+			SCContextAddRightTopRoundedRect(c, rect, kCornerRadius);
 			break;
 		case SCSegmentRightBottomRound:
-			SCContextAddRightBottomRoundedRect(c, rect, kSCSegmentCornerRadius);
+			SCContextAddRightBottomRoundedRect(c, rect, kCornerRadius);
 			break;
 		default:
 			SCContextAddRoundedRect(c, rect, 0);

@@ -12,15 +12,19 @@
 //	Represents a multi-row segmented control.
 //
 
+#import "SCSegmentColorScheme.h"
+
 @interface SCSegmentedControl : UIControl {
 
 @private
+	SCSegmentColorScheme _colorScheme;
 	NSUInteger _columnCount, _rowCount;
 	NSArray *_segmentTitles;
 	NSMutableArray *_segments;
 	NSUInteger _selectedIndex;
 }
 
+@property (nonatomic, assign) SCSegmentColorScheme colorScheme;
 @property (nonatomic, assign) NSUInteger columnCount;
 @property (nonatomic, assign) NSUInteger rowCount;
 /** If you specified 3 columns and 2 rows, this array whould contain 6 items. */

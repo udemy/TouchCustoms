@@ -12,6 +12,8 @@
 //	Represents a single segment in SCSegmentedControl.
 //
 
+#import "SCSegmentColorScheme.h"
+
 typedef enum {
 	SCSegmentCenter,
 	SCSegmentLeft,
@@ -30,11 +32,15 @@ typedef enum {
 @private
 	BOOL _selected;
 	SCSegmentStyle _style;
+	SCSegmentColorScheme _colorScheme;
 	UILabel *_titleLabel;
 }
 
 @property (nonatomic, assign) BOOL selected;
+/** Determines the form of the segment. */
 @property (nonatomic, assign) SCSegmentStyle style;
+/** Determines segment foreground style when it is selected. */
+@property (nonatomic, assign) SCSegmentColorScheme colorScheme;
 @property (nonatomic, readonly) UILabel *titleLabel;
 
 + (SCSegment *)segmentWithStyle:(SCSegmentStyle)style;
