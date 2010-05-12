@@ -23,5 +23,5 @@ h2. Сьпіс кампанэнтаў
 
 # @SCMemoryManagement@ - Спрашчае кіраваньне памяцяй.
 # @SCRatingView@ - 5-ці-зоркавы рэйтынґ-вью, што дазваляе ўсталёўваць рэйтынґ карыстальніку.
-# @SCSegmentedControl@ - Шмпат-радковы @UISegmentedControl@.
+# @SCSegmentedControl@ - Шмат-радковы @UISegmentedControl@.
 # @SCSymbolicProgressBar@ - Проґрэс-бар, які выкарыстоўвае шэраг аднолькавых відарысаў дзеля адлюстраваньня статусу.
