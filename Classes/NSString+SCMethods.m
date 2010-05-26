@@ -44,7 +44,10 @@
 
 - (NSString *)stringByAddingPercentEscapes {
 
-	return (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, NULL, CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+	CFStringRef escapedString = CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, NULL, CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+	NSString *result = [NSString stringWithString:(NSString *)escapedString];
+	CFRelease(escapedString);
+	return result;
 }
 
 - (NSString *)stringByTruncatingWith:(NSString *)truncateString measuringAgainstFont:(UIFont *)font

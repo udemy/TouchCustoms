@@ -34,5 +34,6 @@
   *		for "OK" string in your Localizable.strings file.
   */
 + (void)showWithMessage:(NSString *)message;
++ (void)showWithTitle:(NSString *)title message:(NSString *)message;
 
 @end

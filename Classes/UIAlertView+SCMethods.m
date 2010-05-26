@@ -23,13 +23,18 @@
 	return result;
 }
 
-+ (void)showWithMessage:(NSString *)message {
++ (void)showWithTitle:(NSString *)title message:(NSString *)message {
 
-	[[[[UIAlertView alloc] initWithTitle:nil
+	[[[[UIAlertView alloc] initWithTitle:title
 								 message:message
 								delegate:nil
 					   cancelButtonTitle:NSLocalizedString(@"OK", @"")
 					   otherButtonTitles:nil] autorelease] show];
+}
+
++ (void)showWithMessage:(NSString *)message {
+
+	[UIAlertView showWithTitle:nil message:message];
 }
 
 @end
