@@ -182,6 +182,8 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 	CGContextDrawLinearGradient(context, borderGradient, gradientStartPoint
 								, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
 	
+	CFRelease(borderGradient);
+	
 	/* Foreground */
 	
 	[self clipForeground:context];
@@ -202,6 +204,8 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 		
 		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint
 									, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
+		CFRelease(foreGradient);
+		
 	} else {
 		
 		CGFloat foreComponents[8] = {
@@ -213,7 +217,10 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 																		 , foreLocations, 2);
 		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint
 									, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
+		CFRelease(foreGradient);
 	}
+	
+	CFRelease(gradientColorSpace);
 }
 
 - (void)clipBackground:(CGContextRef)c {

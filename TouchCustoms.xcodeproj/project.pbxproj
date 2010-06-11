@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5501ADF3116F552D0085A394 /* SCSegmentColorScheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 5501ADF2116F552D0085A394 /* SCSegmentColorScheme.h */; };
+		55031A8511C26ABB00143777 /* UIApplication+UniversalApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 55031A8311C26ABB00143777 /* UIApplication+UniversalApp.h */; };
+		55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */; };
 		551490A01149012600B7E4DA /* SCRadioCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909C1149012600B7E4DA /* SCRadioCell.h */; };
 		551490A11149012600B7E4DA /* SCRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5514909D1149012600B7E4DA /* SCRadioCell.m */; };
 		551490A21149012600B7E4DA /* SCRadioController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909E1149012600B7E4DA /* SCRadioController.h */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		5501ADF2116F552D0085A394 /* SCSegmentColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCSegmentColorScheme.h; path = Classes/SCSegmentColorScheme.h; sourceTree = "<group>"; };
+		55031A8311C26ABB00143777 /* UIApplication+UniversalApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+UniversalApp.h"; path = "Classes/UIApplication+UniversalApp.h"; sourceTree = "<group>"; };
+		55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+UniversalApp.m"; path = "Classes/UIApplication+UniversalApp.m"; sourceTree = "<group>"; };
 		5514909C1149012600B7E4DA /* SCRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRadioCell.h; path = Classes/SCRadioCell.h; sourceTree = "<group>"; };
 		5514909D1149012600B7E4DA /* SCRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRadioCell.m; path = Classes/SCRadioCell.m; sourceTree = "<group>"; };
 		5514909E1149012600B7E4DA /* SCRadioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRadioController.h; path = Classes/SCRadioController.h; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 				55B66082115B7087009F3D3B /* UIActionSheet+SCMethods.m */,
 				555A3A85114D605F0040850F /* UIAlertView+SCMethods.h */,
 				555A3A86114D605F0040850F /* UIAlertView+SCMethods.m */,
+				55031A8311C26ABB00143777 /* UIApplication+UniversalApp.h */,
+				55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */,
 			);
 			name = "Screen Stuff";
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				5553ADE0114FB58D0088FC57 /* SCActivityIndicatorCell.h in Headers */,
 				55B66083115B7087009F3D3B /* UIActionSheet+SCMethods.h in Headers */,
 				5501ADF3116F552D0085A394 /* SCSegmentColorScheme.h in Headers */,
+				55031A8511C26ABB00143777 /* UIApplication+UniversalApp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +391,7 @@
 				555A3A88114D605F0040850F /* UIAlertView+SCMethods.m in Sources */,
 				5553ADE1114FB58D0088FC57 /* SCActivityIndicatorCell.m in Sources */,
 				55B66084115B7087009F3D3B /* UIActionSheet+SCMethods.m in Sources */,
+				55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
