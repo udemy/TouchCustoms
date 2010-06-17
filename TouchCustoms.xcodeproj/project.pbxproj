@@ -12,6 +12,8 @@
 		55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */; };
 		55031B3711C2B03B00143777 /* UIApplication+LocalNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 55031B3511C2B03B00143777 /* UIApplication+LocalNotifications.h */; };
 		55031B3811C2B03B00143777 /* UIApplication+LocalNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 55031B3611C2B03B00143777 /* UIApplication+LocalNotifications.m */; };
+		550320DB11CA8D0C00143777 /* UIImage+UniversalApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 550320D911CA8D0C00143777 /* UIImage+UniversalApp.h */; };
+		550320DC11CA8D0C00143777 /* UIImage+UniversalApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 550320DA11CA8D0C00143777 /* UIImage+UniversalApp.m */; };
 		551490A01149012600B7E4DA /* SCRadioCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909C1149012600B7E4DA /* SCRadioCell.h */; };
 		551490A11149012600B7E4DA /* SCRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5514909D1149012600B7E4DA /* SCRadioCell.m */; };
 		551490A21149012600B7E4DA /* SCRadioController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909E1149012600B7E4DA /* SCRadioController.h */; };
@@ -71,6 +73,8 @@
 		55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+UniversalApp.m"; path = "Classes/UIApplication+UniversalApp.m"; sourceTree = "<group>"; };
 		55031B3511C2B03B00143777 /* UIApplication+LocalNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+LocalNotifications.h"; path = "Classes/UIApplication+LocalNotifications.h"; sourceTree = "<group>"; };
 		55031B3611C2B03B00143777 /* UIApplication+LocalNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+LocalNotifications.m"; path = "Classes/UIApplication+LocalNotifications.m"; sourceTree = "<group>"; };
+		550320D911CA8D0C00143777 /* UIImage+UniversalApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+UniversalApp.h"; path = "Classes/UIImage+UniversalApp.h"; sourceTree = "<group>"; };
+		550320DA11CA8D0C00143777 /* UIImage+UniversalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+UniversalApp.m"; path = "Classes/UIImage+UniversalApp.m"; sourceTree = "<group>"; };
 		5514909C1149012600B7E4DA /* SCRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRadioCell.h; path = Classes/SCRadioCell.h; sourceTree = "<group>"; };
 		5514909D1149012600B7E4DA /* SCRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRadioCell.m; path = Classes/SCRadioCell.m; sourceTree = "<group>"; };
 		5514909E1149012600B7E4DA /* SCRadioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRadioController.h; path = Classes/SCRadioController.h; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 			children = (
 				5588F73E1119773C002BF56E /* SCGrfx.h */,
 				5588F73F1119773C002BF56E /* SCGrfx.m */,
+				550320D911CA8D0C00143777 /* UIImage+UniversalApp.h */,
+				550320DA11CA8D0C00143777 /* UIImage+UniversalApp.m */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 				5501ADF3116F552D0085A394 /* SCSegmentColorScheme.h in Headers */,
 				55031A8511C26ABB00143777 /* UIApplication+UniversalApp.h in Headers */,
 				55031B3711C2B03B00143777 /* UIApplication+LocalNotifications.h in Headers */,
+				550320DB11CA8D0C00143777 /* UIImage+UniversalApp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +407,7 @@
 				55B66084115B7087009F3D3B /* UIActionSheet+SCMethods.m in Sources */,
 				55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */,
 				55031B3811C2B03B00143777 /* UIApplication+LocalNotifications.m in Sources */,
+				550320DC11CA8D0C00143777 /* UIImage+UniversalApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
