@@ -41,6 +41,7 @@
 }
 
 @synthesize columnCount = _columnCount, rowCount = _rowCount;
+@synthesize columnPattern = _columnPattern;
 @synthesize segmentTitles = _segmentTitles;
 @synthesize selectedIndex = _selectedIndex;
 
@@ -58,6 +59,16 @@
 	if (_rowCount != value) {
 		
 		_rowCount = value;
+		[self setNeedsLayout];
+	}
+}
+
+- (void)setColumnPattern:(NSArray *)value {
+
+	if (_columnPattern != value) {
+	
+		SC_RELEASE_SAFELY(_columnPattern);
+		_columnPattern = [value retain];
 		[self setNeedsLayout];
 	}
 }
@@ -120,6 +131,7 @@
 
 - (void)dealloc {
 
+	SC_RELEASE_SAFELY(_columnPattern);
 	SC_RELEASE_SAFELY(_segmentTitles);
 	SC_RELEASE_SAFELY(_segments);
 	
@@ -130,32 +142,59 @@
 
 	[super layoutSubviews];
 	
-	NSUInteger mustItemCount = self.columnCount * self.rowCount;
+	NSUInteger mustItemCount = 0;
+	
+	if (self.columnPattern) {
+		
+		for (NSUInteger i = 0; i < self.rowCount; i++) {
+		
+			mustItemCount += [[self.columnPattern objectAtIndex:i] unsignedIntValue];
+		}
+		
+	} else {
+	
+		mustItemCount = self.columnCount * self.rowCount;
+	}
 	
 	for (SCSegment *segment in _segments) {
+		
 		[segment removeFromSuperview];
 	}
 	
 	[_segments removeAllObjects];
 	
 	if (0 == mustItemCount) {
+		
 		return;
 	}
 	
 	if (mustItemCount != self.segmentTitles.count) {
+		
 		return;
 	}
 	
 	NSInteger width = CGRectGetWidth(self.frame);
-	NSInteger segmentWidth = width / self.columnCount;
 	NSInteger segmentOffsetY = 0;
 	NSUInteger titleIndex = 0;
 	
 	for (NSUInteger row = 0; row < self.rowCount; row++) {
 		
+		NSUInteger columnCount;
+		
+		if (self.columnPattern) {
+		
+			columnCount = [[self.columnPattern objectAtIndex:row] unsignedIntValue];
+			
+		} else {
+		
+			columnCount = self.columnCount;
+		}
+		
+		
+		NSInteger segmentWidth = width / columnCount;
 		CGFloat buttonOffsetX = 0;
 		
-		for (NSUInteger col = 0; col < self.columnCount; col++) {
+		for (NSUInteger col = 0; col < columnCount; col++) {
 			
 			SCSegment *segment = [SCSegment segmentWithStyle:SCSegmentCenter];
 			
@@ -182,7 +221,7 @@
 					
 					segment.style = SCSegmentLeftRound;
 					
-				} else if (self.columnCount - 1 == col) {
+				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
 					   |   |   | * |
@@ -206,7 +245,7 @@
 					
 					segment.style = SCSegmentLeftTopRound;
 					
-				} else if (self.columnCount - 1 == col) {
+				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
 					   |   |   | * |
@@ -234,7 +273,7 @@
 					
 					segment.style = SCSegmentLeftBottomRound;
 					
-				} else if (self.columnCount - 1 == col) {
+				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
 					   |   |   |   |
@@ -262,7 +301,7 @@
 					
 					segment.style = SCSegmentLeft;
 					
-				} else if (self.columnCount - 1 == col) {
+				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
 					   |   |   |   |
