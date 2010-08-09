@@ -14,6 +14,10 @@
 
 #import "SCSegmentColorScheme.h"
 
+enum {
+	SCSegmentedControlNoSegment = -1 /* Segment index for no selected segment. */
+};
+
 @interface SCSegmentedControl : UIControl {
 
 @private
@@ -21,8 +25,9 @@
 	NSUInteger _columnCount, _rowCount;
 	NSArray *_columnPattern;
 	NSArray *_segmentTitles;
+	NSArray *_segmentImages;
 	NSMutableArray *_segments;
-	NSUInteger _selectedIndex;
+	NSInteger _selectedIndex;
 }
 
 @property (nonatomic, assign) SCSegmentColorScheme colorScheme;
@@ -36,8 +41,13 @@
   * 
   */
 @property (nonatomic, retain) NSArray *columnPattern;
-/** If you specified 3 columns and 2 rows, this array whould contain 6 items. */
+/** If you specified 3 columns and 2 rows, this array should contain 6 items. */
 @property (nonatomic, copy) NSArray *segmentTitles;
-@property (nonatomic, assign) NSUInteger selectedIndex;
+/** If you specified 3 columns and 2 rows, this array should contain 6 items.
+  * Overrides segmentTitles, which means that if segmentImages array is valid,
+  * the control will render images instead of text for segments. */
+@property (nonatomic, copy) NSArray *segmentImages;
+
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 @end
