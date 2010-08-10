@@ -13,7 +13,34 @@
 
 @implementation NSArray (Linq)
 
-+ (NSArray *)map:(NSArray *)array usingBlock:(id (^)(id currentItem))block {
++ (id)aggregate:(NSArray *)array usingBlock:(id (^)(id accumulator, id currentItem))block {
+
+	id result = nil;
+	
+	NSEnumerator *enumerator = [array objectEnumerator];
+	id firstObject = [enumerator nextObject];
+	
+	if (firstObject) {
+	
+		result = firstObject;
+		
+		id secondObject;
+		
+		while (secondObject = [enumerator nextObject]) {
+		
+			result = block(result, secondObject);
+		}
+	}
+	
+	return result;
+}
+
+- (id)aggregateUsingBlock:(id (^)(id accumulator, id currentItem))block {
+	
+	return [NSArray aggregate:self usingBlock:block];
+}
+
++ (NSArray *)select:(NSArray *)array usingBlock:(id (^)(id currentItem))block {
 	
 	NSMutableArray *result = [NSMutableArray arrayWithCapacity:array.count];
 	
@@ -25,9 +52,9 @@
 	return result;
 }
 
-- (NSArray *)mapUsingBlock:(id (^)(id currentItem))block {
+- (NSArray *)selectUsingBlock:(id (^)(id currentItem))block {
 	
-	return [[self class] map:self usingBlock:block];
+	return [NSArray select:self usingBlock:block];
 }
 
 @end

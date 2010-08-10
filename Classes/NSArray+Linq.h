@@ -14,7 +14,10 @@
 
 @interface NSArray (Linq)
 
-+ (NSArray *)map:(NSArray *)array usingBlock:(id (^)(id currentItem))block;
-- (NSArray *)mapUsingBlock:(id (^)(id currentItem))block;
++ (id)aggregate:(NSArray *)array usingBlock:(id (^)(id accumulator, id currentItem))block;
+- (id)aggregateUsingBlock:(id (^)(id accumulator, id currentItem))block;
+
++ (NSArray *)select:(NSArray *)array usingBlock:(id (^)(id currentItem))block;
+- (NSArray *)selectUsingBlock:(id (^)(id currentItem))block;
 
 @end
