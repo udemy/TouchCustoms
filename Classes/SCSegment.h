@@ -34,6 +34,7 @@ typedef enum {
 	SCSegmentStyle _style;
 	SCSegmentColorScheme _colorScheme;
 	UILabel *_titleLabel;
+	UIImageView *_imageView;
 }
 
 @property (nonatomic, assign) BOOL selected;
@@ -42,6 +43,7 @@ typedef enum {
 /** Determines segment foreground style when it is selected. */
 @property (nonatomic, assign) SCSegmentColorScheme colorScheme;
 @property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly) UIImageView *imageView;
 
 + (SCSegment *)segmentWithStyle:(SCSegmentStyle)style;
 - (id)initWithStyle:(SCSegmentStyle)style frame:(CGRect)frame;

@@ -32,9 +32,9 @@
 @synthesize colorScheme = _colorScheme;
 
 - (void)setColorScheme:(SCSegmentColorScheme)value {
-
-	if (_colorScheme != value) {
 	
+	if (_colorScheme != value) {
+		
 		_colorScheme = value;
 		[self setNeedsLayout];
 	}
@@ -42,11 +42,11 @@
 
 @synthesize columnCount = _columnCount, rowCount = _rowCount;
 @synthesize columnPattern = _columnPattern;
-@synthesize segmentTitles = _segmentTitles;
+@synthesize segmentTitles = _segmentTitles, segmentImages = _segmentImages;
 @synthesize selectedIndex = _selectedIndex;
 
 - (void)setColumnCount:(NSUInteger)value {
-
+	
 	if (_columnCount != value) {
 		
 		_columnCount = value;
@@ -64,9 +64,9 @@
 }
 
 - (void)setColumnPattern:(NSArray *)value {
-
-	if (_columnPattern != value) {
 	
+	if (_columnPattern != value) {
+		
 		SC_RELEASE_SAFELY(_columnPattern);
 		_columnPattern = [value retain];
 		[self setNeedsLayout];
@@ -83,17 +83,27 @@
 	}
 }
 
-- (void)setSelectedIndex:(NSUInteger)value {
+- (void)setSegmentImages:(NSArray *)value {
 
+	if (_segmentImages != value) {
+	
+		SC_RELEASE_SAFELY(_segmentImages);
+		_segmentImages = [[NSArray alloc] initWithArray:value];
+		[self setNeedsLayout];
+	}
+}
+
+- (void)setSelectedIndex:(NSInteger)value {
+	
 	if (_selectedIndex != value) {
 		
-		if (_segments.count > _selectedIndex) {
+		if (_segments.count > _selectedIndex && _selectedIndex != SCSegmentedControlNoSegment) {
 			[[_segments objectAtIndex:_selectedIndex] setSelected:NO];
 		}
 		
 		_selectedIndex = value;
 		
-		if (_segments.count > _selectedIndex) {
+		if (_segments.count > _selectedIndex && _selectedIndex != SCSegmentedControlNoSegment) {
 			[[_segments objectAtIndex:_selectedIndex] setSelected:YES];
 		}
 		
@@ -107,17 +117,19 @@
 }
 
 - (id)initWithFrame:(CGRect)frame {
-
+	
 	if (self = [super initWithFrame:frame]) {
+		
 		[self __initializeComponent];
 	}
 	
 	return self;
 }
-			
-- (id)initWithCoder:(NSCoder *)decoder {
 
+- (id)initWithCoder:(NSCoder *)decoder {
+	
 	if (self = [super initWithCoder:decoder]) {
+		
 		[self __initializeComponent];
 	}
 	
@@ -130,16 +142,17 @@
 }
 
 - (void)dealloc {
-
+	
 	SC_RELEASE_SAFELY(_columnPattern);
 	SC_RELEASE_SAFELY(_segmentTitles);
+	SC_RELEASE_SAFELY(_segmentImages);
 	SC_RELEASE_SAFELY(_segments);
 	
 	[super dealloc];
 }
 
 - (void)layoutSubviews {
-
+	
 	[super layoutSubviews];
 	
 	NSUInteger mustItemCount = 0;
@@ -147,12 +160,12 @@
 	if (self.columnPattern) {
 		
 		for (NSUInteger i = 0; i < self.rowCount; i++) {
-		
+			
 			mustItemCount += [[self.columnPattern objectAtIndex:i] unsignedIntValue];
 		}
 		
 	} else {
-	
+		
 		mustItemCount = self.columnCount * self.rowCount;
 	}
 	
@@ -168,28 +181,33 @@
 		return;
 	}
 	
-	if (mustItemCount != self.segmentTitles.count) {
+	BOOL useImages = NO;
+	
+	if (mustItemCount == self.segmentImages.count) {
+		
+		useImages = YES;
+		
+	} else if (mustItemCount != self.segmentTitles.count) {
 		
 		return;
 	}
 	
 	NSInteger width = CGRectGetWidth(self.frame);
 	NSInteger segmentOffsetY = 0;
-	NSUInteger titleIndex = 0;
+	NSUInteger segmentIndex = 0;
 	
 	for (NSUInteger row = 0; row < self.rowCount; row++) {
 		
 		NSUInteger columnCount;
 		
 		if (self.columnPattern) {
-		
+			
 			columnCount = [[self.columnPattern objectAtIndex:row] unsignedIntValue];
 			
 		} else {
-		
+			
 			columnCount = self.columnCount;
 		}
-		
 		
 		NSInteger segmentWidth = width / columnCount;
 		CGFloat buttonOffsetX = 0;
@@ -200,11 +218,22 @@
 			
 			segment.colorScheme = self.colorScheme;
 			segment.frame = CGRectMake(buttonOffsetX, segmentOffsetY, segmentWidth, kRowHeight);
-			segment.tag = titleIndex;
-			segment.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-			segment.titleLabel.text = [self.segmentTitles objectAtIndex:titleIndex];
+			segment.tag = segmentIndex;
 			
-			if (self.selectedIndex == titleIndex) {
+			if (useImages) {
+				
+				segment.imageView.image = [self.segmentImages objectAtIndex:segmentIndex];
+				segment.titleLabel.text = nil;
+				
+			} else {
+				
+				segment.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+				segment.titleLabel.text = [self.segmentTitles objectAtIndex:segmentIndex];
+				segment.imageView.image = nil;
+			}
+			
+			if (self.selectedIndex == segmentIndex) {
+				
 				segment.selected = YES;
 			}
 			
@@ -215,8 +244,8 @@
 				if (0 == col) {
 					
 					/* +---+---+---+
-					   | * |   |   |
-					   +---+---+---+
+					 | * |   |   |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentLeftRound;
@@ -224,8 +253,8 @@
 				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
-					   |   |   | * |
-					   +---+---+---+
+					 |   |   | * |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentRightRound;
@@ -235,12 +264,12 @@
 				if (0 == col) {
 					
 					/* +---+---+---+
-					   | * |   |   |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
+					 | * |   |   |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentLeftTopRound;
@@ -248,12 +277,12 @@
 				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
-					   |   |   | * |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
+					 |   |   | * |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentRightTopRound;
@@ -263,12 +292,12 @@
 				if (0 == col) {
 					
 					/* +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   | * |   |   |
-					   +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 | * |   |   |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentLeftBottomRound;
@@ -276,12 +305,12 @@
 				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   |   |   | * |
-					   +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 |   |   | * |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentRightBottomRound;
@@ -291,12 +320,12 @@
 				if (0 == col) {
 					
 					/* +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   | * |   |   |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 | * |   |   |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentLeft;
@@ -304,12 +333,12 @@
 				} else if (columnCount - 1 == col) {
 					
 					/* +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
-					   |   |   | * |
-					   +---+---+---+
-					   |   |   |   |
-					   +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
+					 |   |   | * |
+					 +---+---+---+
+					 |   |   |   |
+					 +---+---+---+
 					 */
 					
 					segment.style = SCSegmentRight;
@@ -317,7 +346,7 @@
 			}
 			
 			buttonOffsetX += segmentWidth;
-			titleIndex += 1;
+			segmentIndex += 1;
 			
 			[_segments addObject:segment];
 			[self addSubview:segment];
@@ -358,7 +387,7 @@
 }
 
 - (NSInteger)__getSegmentIndexFromTouches:(NSSet *)touches withEvent:(UIEvent *)event {
-
+	
 	id touch = [touches anyObject];
 	
 	for (SCSegment *segment in _segments) {

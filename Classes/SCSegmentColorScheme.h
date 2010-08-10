@@ -14,5 +14,6 @@
 
 typedef enum {
 	SCSegmentColorSchemeDefault,
-	SCSegmentColorSchemeBlackOpaque
+	SCSegmentColorSchemeBlackOpaque,
+	SCSegmentColorSchemeBlueContrast
 } SCSegmentColorScheme;

@@ -33,6 +33,7 @@
 @synthesize selected = _selected;
 @synthesize style = _style;
 @synthesize titleLabel = _titleLabel;
+@synthesize imageView = _imageView;
 
 - (void)setSelected:(BOOL)value {
 	
@@ -76,16 +77,20 @@
 - (id)initWithStyle:(SCSegmentStyle)style frame:(CGRect)frame {
 	
 	if (self = [super initWithFrame:frame]) {
+		
 		[self __initializeComponent:style];
 	}
+	
 	return self;
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
 	
 	if (self = [super initWithCoder:decoder]) {
+		
 		[self __initializeComponent:SCSegmentCenter];
 	}
+	
 	return self;
 }
 
@@ -109,7 +114,13 @@
 	_titleLabel.textColor = [UIColor blackColor];
 	_titleLabel.highlightedTextColor = [UIColor whiteColor];
 	
+	_imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+	_imageView.autoresizingMask = _titleLabel.autoresizingMask;
+	_imageView.backgroundColor = [UIColor clearColor];
+	_imageView.contentMode = UIViewContentModeCenter;
+	
 	[self addSubview:_titleLabel];
+	[self addSubview:_imageView];
 }
 
 @end
@@ -131,6 +142,13 @@ static CGFloat _BlackOpaqueForeColor[kForeColorArraySize] = {
 	/* Stop 4 */ .29, .29, .29, 1
 };
 
+static CGFloat _BlueContrastForeColor[kForeColorArraySize] = {	
+	/* Stop 1 */ .37, .37, .37, 1,
+	/* Stop 2 */ .196, .196, .196, 1,
+	/* Stop 3 */ .196, .196, .196, 1,
+	/* Stop 4 */ .02, .02, .02, 1
+};
+
 #define kBorderWidth			1.
 #define kCornerRadius			10.
 #define kBorderStates			2
@@ -143,6 +161,11 @@ static CGFloat _DefaultBorderComponents[kBorderStates][kBorderComponentCount] = 
 
 static CGFloat _BlackOpaqueBorderComponents[kBorderStates][kBorderComponentCount] = {
 	/* Default */ { /* Stop 1 */ .68, .68, .68, 1, /* Stop 2 */ .61, .61, .61, 1 },
+	/* Selected */ { /* Stop 1 */ .01, .01, .01, 1, /* Stop 2 */ .29, .29, .29, 1 }
+};
+
+static CGFloat _BlueContrastBorderComponents[kBorderStates][kBorderComponentCount] = {
+	/* Default */ { /* Stop 1 */ .58, .71, .74, 1, /* Stop 2 */ .62, .73, .76, 1 },
 	/* Selected */ { /* Stop 1 */ .01, .01, .01, 1, /* Stop 2 */ .29, .29, .29, 1 }
 };
 
@@ -169,19 +192,23 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 	
 	CGFloat *borderComponents;
 	
-	if (SCSegmentColorSchemeBlackOpaque == self.colorScheme) {
-		borderComponents = _BlackOpaqueBorderComponents[self.selected];
-	} else {
-		borderComponents = _DefaultBorderComponents[self.selected];
+	switch (self.colorScheme) {
+			
+		case SCSegmentColorSchemeBlackOpaque:
+			borderComponents = _BlackOpaqueBorderComponents[self.selected];
+			break;
+		case SCSegmentColorSchemeBlueContrast:
+			borderComponents = _BlueContrastBorderComponents[self.selected];
+			break;
+		default:
+			borderComponents = _DefaultBorderComponents[self.selected];
+			break;
 	}
-
-	CGGradientRef borderGradient = CGGradientCreateWithColorComponents(gradientColorSpace
-																	   , borderComponents
-																	   , _BorderLocations
-																	   , 2);
-	CGContextDrawLinearGradient(context, borderGradient, gradientStartPoint
-								, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
 	
+	CGGradientRef borderGradient = CGGradientCreateWithColorComponents(gradientColorSpace, borderComponents
+																	   , _BorderLocations, 2);
+	CGContextDrawLinearGradient(context, borderGradient, gradientStartPoint, gradientEndPoint
+								, kCGGradientDrawsBeforeStartLocation);
 	CFRelease(borderGradient);
 	
 	/* Foreground */
@@ -192,10 +219,17 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 		
 		CGFloat *colorScheme;
 		
-		if (SCSegmentColorSchemeBlackOpaque == self.colorScheme) {
-			colorScheme = _BlackOpaqueForeColor;
-		} else {
-			colorScheme = _DefaultForeColor;
+		switch (self.colorScheme) {
+				
+			case SCSegmentColorSchemeBlackOpaque:
+				colorScheme = _BlackOpaqueForeColor;
+				break;
+			case SCSegmentColorSchemeBlueContrast:
+				colorScheme = _BlueContrastForeColor;
+				break;
+			default:
+				colorScheme = _DefaultForeColor;
+				break;
 		}
 		
 		CGFloat foreLocations[4] = { 0, .5, .5, 1 };
@@ -208,15 +242,37 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 		
 	} else {
 		
-		CGFloat foreComponents[8] = {
-			/* Stop 1 */ .97, .97, .97, 1,
-			/* Stop 2 */ .78, .78, .78, 1
-		};
-		CGFloat foreLocations[2] = { 0, 1 };
-		CGGradientRef foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, foreComponents
-																		 , foreLocations, 2);
-		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint
-									, gradientEndPoint, kCGGradientDrawsBeforeStartLocation);
+		CGGradientRef foreGradient;
+		
+		switch (self.colorScheme) {
+				
+			case SCSegmentColorSchemeBlueContrast: {
+			
+				CGFloat foreComponents[16] = {
+				
+					/* Stop 1 */ .8, .86, .88, 1,
+					/* Stop 2 */ .7, .79, .81, 1,
+					/* Stop 3 */ .66, .76, .79, 1,
+					/* Stop 4 */ .66, .76, .79, 1
+				};
+				CGFloat foreLocations[4] = { 0, .5, .5, 1 };
+				foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, foreComponents, foreLocations, 4);
+				break;
+			}
+			default: {		
+				CGFloat foreComponents[8] = {
+					/* Stop 1 */ .97, .97, .97, 1,
+					/* Stop 2 */ .78, .78, .78, 1
+				};
+				CGFloat foreLocations[2] = { 0, 1 };
+				foreGradient = CGGradientCreateWithColorComponents(gradientColorSpace, foreComponents, foreLocations, 2);
+				
+				break;
+			}
+		}
+		
+		CGContextDrawLinearGradient(context, foreGradient, gradientStartPoint, gradientEndPoint
+									, kCGGradientDrawsBeforeStartLocation);
 		CFRelease(foreGradient);
 	}
 	
