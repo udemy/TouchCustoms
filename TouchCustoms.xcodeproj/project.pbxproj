@@ -63,6 +63,8 @@
 		55E466F211203605000B710E /* NSMutableArray+SCQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E466F011203605000B710E /* NSMutableArray+SCQueue.h */; };
 		55E466F311203605000B710E /* NSMutableArray+SCQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E466F111203605000B710E /* NSMutableArray+SCQueue.m */; };
 		55E46A471120A786000B710E /* SCLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E46A461120A786000B710E /* SCLog.h */; };
+		55F0B0FF1211EE3600AFFD7E /* NSArray+Linq.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F0B0FD1211EE3600AFFD7E /* NSArray+Linq.h */; };
+		55F0B1001211EE3600AFFD7E /* NSArray+Linq.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B0FE1211EE3600AFFD7E /* NSArray+Linq.m */; };
 		AA747D9F0F9514B9006C5449 /* TouchCustoms_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TouchCustoms_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -124,6 +126,8 @@
 		55E466F011203605000B710E /* NSMutableArray+SCQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SCQueue.h"; path = "Classes/NSMutableArray+SCQueue.h"; sourceTree = "<group>"; };
 		55E466F111203605000B710E /* NSMutableArray+SCQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SCQueue.m"; path = "Classes/NSMutableArray+SCQueue.m"; sourceTree = "<group>"; };
 		55E46A461120A786000B710E /* SCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCLog.h; path = Classes/SCLog.h; sourceTree = "<group>"; };
+		55F0B0FD1211EE3600AFFD7E /* NSArray+Linq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Linq.h"; path = "Classes/NSArray+Linq.h"; sourceTree = "<group>"; };
+		55F0B0FE1211EE3600AFFD7E /* NSArray+Linq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Linq.m"; path = "Classes/NSArray+Linq.m"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TouchCustoms_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchCustoms_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTouchCustoms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTouchCustoms.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +189,8 @@
 				5514909A114900BC00B7E4DA /* Selectors */,
 				55A1118A1138391F00810178 /* Settings */,
 				5514909B114900E400B7E4DA /* TableView Stuff */,
+				55F0B0FD1211EE3600AFFD7E /* NSArray+Linq.h */,
+				55F0B0FE1211EE3600AFFD7E /* NSArray+Linq.m */,
 				555A3A4A114D4FA00040850F /* NSError+SCMethods.h */,
 				555A3A4B114D4FA00040850F /* NSError+SCMethods.m */,
 				55E466F011203605000B710E /* NSMutableArray+SCQueue.h */,
@@ -327,6 +333,7 @@
 				55031A8511C26ABB00143777 /* UIApplication+UniversalApp.h in Headers */,
 				55031B3711C2B03B00143777 /* UIApplication+LocalNotifications.h in Headers */,
 				550320DB11CA8D0C00143777 /* UIImage+UniversalApp.h in Headers */,
+				55F0B0FF1211EE3600AFFD7E /* NSArray+Linq.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +415,7 @@
 				55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */,
 				55031B3811C2B03B00143777 /* UIApplication+LocalNotifications.m in Sources */,
 				550320DC11CA8D0C00143777 /* UIImage+UniversalApp.m in Sources */,
+				55F0B1001211EE3600AFFD7E /* NSArray+Linq.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
