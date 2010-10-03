@@ -13,15 +13,30 @@
 //	The last text-field when Done clicked will close the keyboard.
 //
 
-#import <Foundation/Foundation.h>
+@class SCTabOrder;
+
+@protocol SCTabOrderDelegate <NSObject>
+
+@required
+
+- (BOOL)tabOrderShouldReturn:(SCTabOrder *)tabOrder;
+
+@optional
+
+- (UIReturnKeyType)returnKeyTypeForLastTextField:(SCTabOrder *)tabOrder;
+
+@end
 
 @class SCTabOrderGroup;
 
 @interface SCTabOrder : NSObject<UITextFieldDelegate> {
 
 @private
+	id <SCTabOrderDelegate> _delegate;
 	NSMutableArray *_textFields;
 }
+
+@property (nonatomic, assign) IBOutlet id <SCTabOrderDelegate> delegate;
 
 - (void)addTextField:(UITextField *)textField;
 - (void)removeTextField:(UITextField *)textField;

@@ -15,7 +15,7 @@
 
 /*
  
- Use this when you have different images for a large-scale display and a normal one.
+ Use this when you have different images for a large-resolution display and a normal one.
  While iPhone OS 4 is capable of selecting such an image itself based on image name
  without extension, earlier OS versions require extension to load an image.
  
