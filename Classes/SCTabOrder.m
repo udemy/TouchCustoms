@@ -78,20 +78,20 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-	BOOL handled = [self.delegate tabOrderShouldReturn:self];
-	
-	if (!handled)
+	if ([_textFields containsObject:textField])
 	{
-		if ([_textFields containsObject:textField])
+		if (textField == [_textFields lastObject])
 		{
-			if (textField == [_textFields lastObject])
+			BOOL handled = [self.delegate tabOrderShouldReturn:self];
+			
+			if (!handled)
 			{
 				[textField resignFirstResponder];
-			} 
-			else
-			{
-				[[_textFields objectAtIndex:[_textFields indexOfObject:textField] + 1] becomeFirstResponder];
 			}
+		} 
+		else
+		{
+			[[_textFields objectAtIndex:[_textFields indexOfObject:textField] + 1] becomeFirstResponder];
 		}
 	}
 	
