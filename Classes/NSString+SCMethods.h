@@ -19,5 +19,6 @@
 - (NSString *)stringByAddingPercentEscapes;
 - (NSString *)stringByTruncatingWith:(NSString *)truncateString measuringAgainstFont:(UIFont *)font
 							forWidth:(CGFloat)width;
++ (CGFloat)widthOfString:(NSString *)aString withFont:(UIFont *)font;
 
 @end
