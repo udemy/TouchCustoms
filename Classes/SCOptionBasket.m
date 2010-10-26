@@ -33,6 +33,32 @@
 {
 }
 
+- (NSString *)selectedItemsDescription
+{
+	NSMutableString *result = [NSMutableString string];
+	
+	NSUInteger counter = 0;
+	
+	NSIndexSet *selectedItems = self.selectedIndexes;
+	
+	NSUInteger itemIndex = [selectedItems firstIndex];
+	
+	while (itemIndex != NSNotFound)
+	{
+		if (0 != counter)
+		{
+			[result appendString:@" "];
+		}
+		
+		[result appendString:[[self itemNames] objectAtIndex:itemIndex]];
+		
+		itemIndex = [selectedItems indexGreaterThanIndex:itemIndex];
+		counter++;
+	}
+	
+	return result;
+}
+
 @end
 
 #define kSelectedIndexesKey	@"selected-indexes"

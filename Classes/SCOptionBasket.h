@@ -38,6 +38,7 @@ typedef enum {
 @interface SCOptionBasket (Protected)
 
 - (void)postProcessCreatedIndexes;
+- (NSString *)selectedItemsDescription;
 
 @end
 
