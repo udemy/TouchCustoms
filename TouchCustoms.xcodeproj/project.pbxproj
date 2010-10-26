@@ -65,6 +65,10 @@
 		55E46A471120A786000B710E /* SCLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E46A461120A786000B710E /* SCLog.h */; };
 		55F0B0FF1211EE3600AFFD7E /* NSArray+Linq.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F0B0FD1211EE3600AFFD7E /* NSArray+Linq.h */; };
 		55F0B1001211EE3600AFFD7E /* NSArray+Linq.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B0FE1211EE3600AFFD7E /* NSArray+Linq.m */; };
+		55FE681D12770E750014AD9B /* SCOptionBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = 55FE681912770E750014AD9B /* SCOptionBasket.h */; };
+		55FE681E12770E750014AD9B /* SCOptionBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE681A12770E750014AD9B /* SCOptionBasket.m */; };
+		55FE681F12770E750014AD9B /* SCOptionTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 55FE681B12770E750014AD9B /* SCOptionTableController.h */; };
+		55FE682012770E750014AD9B /* SCOptionTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE681C12770E750014AD9B /* SCOptionTableController.m */; };
 		AA747D9F0F9514B9006C5449 /* TouchCustoms_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TouchCustoms_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +132,10 @@
 		55E46A461120A786000B710E /* SCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCLog.h; path = Classes/SCLog.h; sourceTree = "<group>"; };
 		55F0B0FD1211EE3600AFFD7E /* NSArray+Linq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Linq.h"; path = "Classes/NSArray+Linq.h"; sourceTree = "<group>"; };
 		55F0B0FE1211EE3600AFFD7E /* NSArray+Linq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Linq.m"; path = "Classes/NSArray+Linq.m"; sourceTree = "<group>"; };
+		55FE681912770E750014AD9B /* SCOptionBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCOptionBasket.h; path = Classes/SCOptionBasket.h; sourceTree = "<group>"; };
+		55FE681A12770E750014AD9B /* SCOptionBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCOptionBasket.m; path = Classes/SCOptionBasket.m; sourceTree = "<group>"; };
+		55FE681B12770E750014AD9B /* SCOptionTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCOptionTableController.h; path = Classes/SCOptionTableController.h; sourceTree = "<group>"; };
+		55FE681C12770E750014AD9B /* SCOptionTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCOptionTableController.m; path = Classes/SCOptionTableController.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TouchCustoms_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchCustoms_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTouchCustoms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTouchCustoms.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +269,10 @@
 				5553ADDF114FB58D0088FC57 /* SCActivityIndicatorCell.m */,
 				55149456114A74FC00B7E4DA /* SCFooterLabel.h */,
 				55149457114A74FC00B7E4DA /* SCFooterLabel.m */,
+				55FE681912770E750014AD9B /* SCOptionBasket.h */,
+				55FE681A12770E750014AD9B /* SCOptionBasket.m */,
+				55FE681B12770E750014AD9B /* SCOptionTableController.h */,
+				55FE681C12770E750014AD9B /* SCOptionTableController.m */,
 				55AD3A4D112D92BD00E70986 /* SCSwitchCell.h */,
 				55AD3A4E112D92BD00E70986 /* SCSwitchCell.m */,
 				55AD3973112D681F00E70986 /* SCTextFieldCell.h */,
@@ -334,6 +346,8 @@
 				55031B3711C2B03B00143777 /* UIApplication+LocalNotifications.h in Headers */,
 				550320DB11CA8D0C00143777 /* UIImage+UniversalApp.h in Headers */,
 				55F0B0FF1211EE3600AFFD7E /* NSArray+Linq.h in Headers */,
+				55FE681D12770E750014AD9B /* SCOptionBasket.h in Headers */,
+				55FE681F12770E750014AD9B /* SCOptionTableController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +437,8 @@
 				55031B3811C2B03B00143777 /* UIApplication+LocalNotifications.m in Sources */,
 				550320DC11CA8D0C00143777 /* UIImage+UniversalApp.m in Sources */,
 				55F0B1001211EE3600AFFD7E /* NSArray+Linq.m in Sources */,
+				55FE681E12770E750014AD9B /* SCOptionBasket.m in Sources */,
+				55FE682012770E750014AD9B /* SCOptionTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
