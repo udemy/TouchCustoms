@@ -53,6 +53,7 @@
 	NSInteger _userRating; /* User rating is supposed to be integer. */
 	BOOL _highlighted;
 	NSArray	*_starViews;
+	NSArray	*_reflectionViews;
 	NSMutableDictionary	*_stateImageDictionary;
 	
 	id<SCRatingDelegate> _delegate;
