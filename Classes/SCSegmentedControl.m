@@ -118,7 +118,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
 	
-	if (self = [super initWithFrame:frame]) {
+	if ((self = [super initWithFrame:frame])) {
 		
 		[self __initializeComponent];
 	}
@@ -128,7 +128,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
 	
-	if (self = [super initWithCoder:decoder]) {
+	if ((self = [super initWithCoder:decoder])) {
 		
 		[self __initializeComponent];
 	}

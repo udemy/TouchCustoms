@@ -25,7 +25,7 @@
 
 - (id)init {
 
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		_slideDuration = 0.3f;
 	}
 	return self;

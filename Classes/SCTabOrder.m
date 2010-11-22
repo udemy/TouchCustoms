@@ -18,7 +18,7 @@
 
 - (id)init
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		_textFields = [[NSMutableArray alloc] initWithCapacity:8];
 	}

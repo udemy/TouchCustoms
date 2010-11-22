@@ -54,7 +54,7 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
 
-	if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+	if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
 		
 		[self __initializeComponent];
 	}

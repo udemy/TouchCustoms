@@ -105,7 +105,7 @@ static const CGFloat kDefaultReflectionOpacity = 0.40;
 
 - (id)initWithFrame:(CGRect)frame {
 	
-	if (self = [super initWithFrame:frame]) {
+	if ((self = [super initWithFrame:frame])) {
 		[self __initializeComponent];
 	}
 	
@@ -114,7 +114,7 @@ static const CGFloat kDefaultReflectionOpacity = 0.40;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	
-	if (self = [super initWithCoder:aDecoder]) {
+	if ((self = [super initWithCoder:aDecoder])) {
 		[self __initializeComponent];
 	}
 	
