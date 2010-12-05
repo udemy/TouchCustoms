@@ -25,6 +25,7 @@ static int _ActivityCount = 0;
 + (void)hideActivityIndicator {
 	
 	_ActivityCount--;
+	_ActivityCount = MAX(0, _ActivityCount);
 	if (!_ActivityCount) {
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	}
