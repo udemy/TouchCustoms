@@ -14,17 +14,22 @@
 
 @implementation SCTabOrder
 
-- (id)init {
+@synthesize delegate = _delegate;
 
-	if (self = [super init]) {
+- (id)init
+{
+	if (self = [super init])
+	{
 		_textFields = [[NSMutableArray alloc] initWithCapacity:8];
 	}
+	
 	return self;
 }
 
-- (void)dealloc {
-	
-	for (UITextField *textField in _textFields) {
+- (void)dealloc
+{	
+	for (UITextField *textField in _textFields)
+	{
 		textField.delegate = nil;
 	}
 	
@@ -33,32 +38,59 @@
 	[super dealloc];
 }
 
-- (void)addTextField:(UITextField *)textField {
-
-	if (![_textFields containsObject:textField]) {
+- (void)addTextField:(UITextField *)textField
+{
+	if (![_textFields containsObject:textField])
+	{
 		[[_textFields lastObject] setReturnKeyType:UIReturnKeyNext];
 		textField.delegate = self;
-		textField.returnKeyType = UIReturnKeyDone;
+		
+		UIReturnKeyType returnKeyType = UIReturnKeyDone;
+		
+		if ([self.delegate respondsToSelector:@selector(returnKeyTypeForLastTextField:)])
+		{
+			returnKeyType = [self.delegate returnKeyTypeForLastTextField:self];
+		}
+		
+		textField.returnKeyType = returnKeyType;
 		[_textFields addObject:textField];
 	}
 }
 
-- (void)removeTextField:(UITextField *)textField {
-	
-	if ([_textFields containsObject:textField]) {
+- (void)removeTextField:(UITextField *)textField
+{	
+	if ([_textFields containsObject:textField])
+	{
 		textField.delegate = nil;
 		textField.returnKeyType = UIReturnKeyDefault;
 		[_textFields removeObject:textField];
-		[[_textFields lastObject] setReturnKeyType:UIReturnKeyDone];
+		
+		UIReturnKeyType returnKeyType = UIReturnKeyDone;
+		
+		if ([self.delegate respondsToSelector:@selector(returnKeyTypeForLastTextField:)])
+		{
+			returnKeyType = [self.delegate returnKeyTypeForLastTextField:self];
+		}
+		
+		[[_textFields lastObject] setReturnKeyType:returnKeyType];
 	}
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-
-	if ([_textFields containsObject:textField]) {
-		if (textField == [_textFields lastObject]) {
-			[textField resignFirstResponder];
-		} else {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	if ([_textFields containsObject:textField])
+	{
+		if (textField == [_textFields lastObject])
+		{
+			BOOL handled = [self.delegate tabOrderShouldReturn:self];
+			
+			if (!handled)
+			{
+				[textField resignFirstResponder];
+			}
+		} 
+		else
+		{
 			[[_textFields objectAtIndex:[_textFields indexOfObject:textField] + 1] becomeFirstResponder];
 		}
 	}

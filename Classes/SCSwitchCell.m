@@ -12,14 +12,6 @@
 #import "SCSwitchCell.h"
 #import "SCMemoryManagement.h"
 
-@interface SCSwitchCell (/* Private methods */)
-
-- (void)__initializeComponent;
-- (CGRect)__calculateTitleLabelRect;
-- (CGRect)__calculateOptionSwitchRect;
-
-@end
-
 @implementation SCSwitchCell
 
 #define kOffset			10
@@ -29,39 +21,8 @@
 
 @synthesize titleLabel = _titleLabel, optionSwitch = _optionSwitch;
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-
-	if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-		
-		[self __initializeComponent];
-	}
-	
-	return self;
-}
-
-- (void)__initializeComponent {
-	
-	self.selectionStyle = UITableViewCellSelectionStyleNone;
-	
-	_titleLabel = [[UILabel alloc] initWithFrame:[self __calculateTitleLabelRect]];
-	_titleLabel.backgroundColor = [UIColor clearColor];
-	_titleLabel.font = [UIFont boldSystemFontOfSize:kTitleFontSize];
-	[self.contentView addSubview:_titleLabel];
-	
-	_optionSwitch = [[UISwitch alloc] initWithFrame:[self __calculateOptionSwitchRect]];
-	[self.contentView addSubview:_optionSwitch];
-}
-
-- (void)dealloc {
-	
-	SC_RELEASE_SAFELY(_titleLabel);
-	SC_RELEASE_SAFELY(_optionSwitch);
-	
-    [super dealloc];
-}
-
 - (CGRect)__calculateTitleLabelRect {
-
+	
 	CGFloat width = CGRectGetWidth(self.contentView.frame);
 	CGFloat height = CGRectGetHeight(self.contentView.frame);
 	
@@ -75,8 +36,38 @@
 	CGFloat height = CGRectGetHeight(self.contentView.frame);
 	
 	CGRect result = CGRectMake(width - kOffset - kSwitchWidth, (height - kSwitchHeight) / 2.,
-								kSwitchWidth, kSwitchHeight);
+							   kSwitchWidth, kSwitchHeight);
 	return result;
+}
+
+- (void)__initializeComponent {
+	
+	self.selectionStyle = UITableViewCellSelectionStyleNone;
+	
+	_titleLabel = [[UILabel alloc] initWithFrame:[self __calculateTitleLabelRect]];
+	_titleLabel.font = [UIFont boldSystemFontOfSize:kTitleFontSize];
+	[self.contentView addSubview:_titleLabel];
+	
+	_optionSwitch = [[UISwitch alloc] initWithFrame:[self __calculateOptionSwitchRect]];
+	[self.contentView addSubview:_optionSwitch];
+}
+
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+
+	if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+		
+		[self __initializeComponent];
+	}
+	
+	return self;
+}
+
+- (void)dealloc {
+	
+	SC_RELEASE_SAFELY(_titleLabel);
+	SC_RELEASE_SAFELY(_optionSwitch);
+	
+    [super dealloc];
 }
 
 - (void)layoutSubviews {
