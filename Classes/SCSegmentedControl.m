@@ -192,8 +192,8 @@
 		return;
 	}
 	
-	NSInteger width = CGRectGetWidth(self.frame);
-	NSInteger segmentOffsetY = 0;
+	CGFloat width = CGRectGetWidth(self.frame);
+	CGFloat segmentOffsetY = 0;
 	NSUInteger segmentIndex = 0;
 	
 	for (NSUInteger row = 0; row < self.rowCount; row++) {
@@ -209,7 +209,7 @@
 			columnCount = self.columnCount;
 		}
 		
-		NSInteger segmentWidth = width / columnCount;
+		CGFloat segmentWidth = width / columnCount;
 		CGFloat buttonOffsetX = 0;
 		
 		for (NSUInteger col = 0; col < columnCount; col++) {
