@@ -1,5 +1,5 @@
 //
-//  UIApplication+SCMethods.h
+//  UIApplication+SCRMethods.h
 //  TouchCustoms
 //
 //  Created by Aleks Nesterow on 6/11/10.
