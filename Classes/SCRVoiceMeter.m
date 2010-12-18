@@ -94,7 +94,7 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 						   @"Cannot enable metering.");
 	
 	bufferByteSize = DeriveBufferSize(queue, &format, kSCVoiceMeterBufferForTime);
-	SCR_LOG_TRACE(@"bufferByteSize = %d", bufferByteSize);
+	SCR_LOG_TRACE(CAT, @"bufferByteSize = %d", bufferByteSize);
 	
 	for (NSUInteger i = 0; i < kSCVoiceMeterBufferNumber; ++i) {
 		
