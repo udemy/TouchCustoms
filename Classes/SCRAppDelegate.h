@@ -12,9 +12,7 @@
 //	UIApplicationDelegate with additional functionality.
 //
 
-@interface SCRAppDelegate : NSObject<UIApplicationDelegate> {
-
-}
+@interface SCRAppDelegate : NSObject <UIApplicationDelegate> 
 
 + (void)showActivityIndicator;
 + (void)hideActivityIndicator;
