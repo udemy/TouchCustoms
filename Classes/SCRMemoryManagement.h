@@ -4,7 +4,7 @@
 //  Created by Aleks Nesterow on 11/19/09.
 //  aleks.nesterow@gmail.com
 //  
-//  Copyright © 2009 Screen Customs s.r.o.
+//  Copyright © 2009 Screencustoms, LLC.
 //  All rights reserved.
 //  
 //  Purpose

@@ -5,7 +5,7 @@
 //  Created by Aleks Nesterow on 2/25/10.
 //	aleks.nesterow@gmail.com
 //	
-//  Copyright © 2010 Screen Customs s.r.o.
+//  Copyright © 2010 Screencustoms, LLC.
 //	All rights reserved.
 //
 
@@ -14,11 +14,13 @@
 @implementation SCRAppDelegate
 
 static int _ActivityCount = 0;
-+ (void)showActivityIndicator {
-	
-	if (!_ActivityCount) {
++ (void)showActivityIndicator
+{	
+	if (!_ActivityCount)
+	{
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	}
+	
 	_ActivityCount++;
 }
 
@@ -26,7 +28,8 @@ static int _ActivityCount = 0;
 	
 	_ActivityCount = MAX(_ActivityCount - 1, 0);
 
-	if (!_ActivityCount) {
+	if (!_ActivityCount)
+	{
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	}
 }
@@ -37,8 +40,8 @@ static int _ActivityCount = 0;
   * 
   * If such behavior is harmful for your application, override this method or do not inherit from
   * SCRAppDelegate at all. */
-- (void)applicationWillTerminate:(UIApplication *)application {
-
+- (void)applicationWillTerminate:(UIApplication *)application
+{
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
