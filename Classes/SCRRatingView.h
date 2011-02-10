@@ -82,4 +82,6 @@
  */
 - (void)setStarImage:(UIImage *)image forState:(NSString *)state;
 
+- (void)setStarImagesForStates:(UIImage *)firstImage, ... NS_REQUIRES_NIL_TERMINATION;
+
 @end

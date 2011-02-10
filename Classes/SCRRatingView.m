@@ -4,9 +4,9 @@
 //
 //  Created by Aleks Nesterow on 7/21/09.
 //  aleks.nesterow@gmail.com
-//  
+//
 //  Copyright © 2009 Screen Customs s.r.o. All rights reserved.
-//  
+//
 
 #import "SCRRatingView.h"
 #import "SCRMemoryManagement.h"
@@ -166,7 +166,7 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
 		scale = [UIScreen mainScreen].scale;
 		
-		// create a 2 bit CGImage containing a gradient that will be used for masking the 
+	// create a 2 bit CGImage containing a gradient that will be used for masking the 
 	// main view content to create the 'fade' of the reflection.  The CGImageCreateWithMask
 	// function will stretch the bitmap image as required, so we can create a 1 pixel wide gradient
 	CGImageRef gradientMaskImage = CreateGradientImage(1, height * scale);
@@ -286,6 +286,30 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 		starView.opaque = value;
 	for (StarViewRef reflectionView in _reflectionViews)
 		reflectionView.opaque = value;
+}
+
+- (void)setStarImagesForStates:(UIImage *)firstImage, ... {
+	BOOL visualize = FALSE;
+	va_list args;
+	va_start(args, firstImage);
+	for (UIImage *image = firstImage; image; image = va_arg(args, UIImage *)) {
+		NSString *state = va_arg(args, NSString *);
+		if (state) {
+			if ([kSCRatingViewHighlighted isEqualToString:state]) {
+				for (StarViewRef starView in _starViews) {
+					starView.highlightedImage = image;
+				}
+			} else {
+				NSMutableDictionary *stateImageDict = [self __stateImageDictionary];
+				[stateImageDict setObject:image forKey:state];
+				visualize = TRUE;
+			}
+		}
+	}
+	va_end(args);
+	
+	if (visualize)
+		[self __visualizeCurrentRating:self.rating];
 }
 
 - (void)setStarImage:(UIImage *)image forState:(NSString *)state {
