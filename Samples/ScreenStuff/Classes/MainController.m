@@ -18,7 +18,7 @@
 
 #import "SymbolicProgressBarController.h"
 
-#import "SCMemoryManagement.h"
+#import "SCRMemoryManagement.h"
 
 @implementation MainController
 
@@ -47,10 +47,10 @@ ratingViewInTableViewController = _ratingViewInTableViewController;
 
 - (void)dealloc {
 	
-	SC_RELEASE_SAFELY(_ratingViewStandAloneController);
-	SC_RELEASE_SAFELY(_ratingViewInTableViewController);
+	SCR_RELEASE_SAFELY(_ratingViewStandAloneController);
+	SCR_RELEASE_SAFELY(_ratingViewInTableViewController);
 	
-	SC_RELEASE_SAFELY(_segmentedControlController);
+	SCR_RELEASE_SAFELY(_segmentedControlController);
 	
     [super dealloc];
 }

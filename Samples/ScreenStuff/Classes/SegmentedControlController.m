@@ -11,8 +11,8 @@
 
 #import "SegmentedControlController.h"
 
-#import "SCSegmentedControl.h"
-#import "SCMemoryManagement.h"
+#import "SCRSegmentedControl.h"
+#import "SCRMemoryManagement.h"
 
 @implementation SegmentedControlController
 
@@ -23,11 +23,11 @@
 
 - (void)dealloc {
 	
-	SC_RELEASE_SAFELY(_oneRowControl);
-	SC_RELEASE_SAFELY(_twoRowControl);
-	SC_RELEASE_SAFELY(_threeRowControl);
+	SCR_RELEASE_SAFELY(_oneRowControl);
+	SCR_RELEASE_SAFELY(_twoRowControl);
+	SCR_RELEASE_SAFELY(_threeRowControl);
 	
-	SC_RELEASE_SAFELY(_valueLabel);
+	SCR_RELEASE_SAFELY(_valueLabel);
 	
     [super dealloc];
 }

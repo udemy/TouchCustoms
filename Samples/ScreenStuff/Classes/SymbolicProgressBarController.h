@@ -9,20 +9,20 @@
 //	All rights reserved.
 //	
 //	Purpose
-//	SCSymbolicProgressBar show-case.
+//	SCRSymbolicProgressBar show-case.
 //
 
-@class SCSymbolicProgressBar;
+@class SCRSymbolicProgressBar;
 
 @interface SymbolicProgressBarController : UIViewController {
 
 @private
-	SCSymbolicProgressBar *_progressBar, *_progressBar2, *_progressBar3, *_progressBar4;
+	SCRSymbolicProgressBar *_progressBar, *_progressBar2, *_progressBar3, *_progressBar4;
 	NSTimer *_timer;
 	BOOL _started;
 }
 
-@property (nonatomic, retain) IBOutlet SCSymbolicProgressBar *progressBar, *progressBar2, *progressBar3, *progressBar4;
+@property (nonatomic, retain) IBOutlet SCRSymbolicProgressBar *progressBar, *progressBar2, *progressBar3, *progressBar4;
 
 - (IBAction)startStopPressed:(id)sender;
 

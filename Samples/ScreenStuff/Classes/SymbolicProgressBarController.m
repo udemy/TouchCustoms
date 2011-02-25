@@ -11,12 +11,12 @@
 
 #import "SymbolicProgressBarController.h"
 
-#import "SCMemoryManagement.h"
-#import "SCSymbolicProgressBar.h"
+#import "SCRMemoryManagement.h"
+#import "SCRSymbolicProgressBar.h"
 
 @interface SymbolicProgressBarController (/* Private methods */)
 
-- (void)increaseValueForProgressBar:(SCSymbolicProgressBar *)progressBar;
+- (void)increaseValueForProgressBar:(SCRSymbolicProgressBar *)progressBar;
 
 @end
 
@@ -29,12 +29,12 @@
 
 - (void)dealloc {
 	
-	SC_RELEASE_TIMER(_timer);
+	SCR_RELEASE_TIMER(_timer);
 	
-	SC_RELEASE_SAFELY(_progressBar);
-	SC_RELEASE_SAFELY(_progressBar2);
-	SC_RELEASE_SAFELY(_progressBar3);
-	SC_RELEASE_SAFELY(_progressBar4);
+	SCR_RELEASE_SAFELY(_progressBar);
+	SCR_RELEASE_SAFELY(_progressBar2);
+	SCR_RELEASE_SAFELY(_progressBar3);
+	SCR_RELEASE_SAFELY(_progressBar4);
 	
     [super dealloc];
 }
@@ -89,7 +89,7 @@
 	
 		[button setTitle:NSLocalizedString(@"Start", @"") forState:UIControlStateNormal];
 		_started = NO;
-		SC_RELEASE_TIMER(_timer);
+		SCR_RELEASE_TIMER(_timer);
 		
 	} else {
 		
@@ -109,7 +109,7 @@
 	[self increaseValueForProgressBar:self.progressBar3];
 }
 
-- (void)increaseValueForProgressBar:(SCSymbolicProgressBar *)progressBar {
+- (void)increaseValueForProgressBar:(SCRSymbolicProgressBar *)progressBar {
 
 	if (progressBar.value >= 1) {
 		progressBar.value = 0;

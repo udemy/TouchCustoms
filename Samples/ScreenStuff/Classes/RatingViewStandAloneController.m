@@ -11,7 +11,7 @@
 
 #import "RatingViewStandAloneController.h"
 
-#import "SCMemoryManagement.h"
+#import "SCRMemoryManagement.h"
 
 @implementation RatingViewStandAloneController
 
@@ -22,9 +22,9 @@
 
 - (void)dealloc {
 	
-	SC_RELEASE_SAFELY(_ratingView);
-	SC_RELEASE_SAFELY(_ratingLabel);
-	SC_RELEASE_SAFELY(_userRatingLabel);
+	SCR_RELEASE_SAFELY(_ratingView);
+	SCR_RELEASE_SAFELY(_ratingLabel);
+	SCR_RELEASE_SAFELY(_userRatingLabel);
 	
     [super dealloc];
 }
@@ -63,13 +63,13 @@
 
 #pragma mark SCRatingView callbacks
 
-- (void)ratingView:(SCRatingView *)ratingView didChangeUserRatingFrom:(NSInteger)previousUserRating
+- (void)ratingView:(SCRRatingView *)ratingView didChangeUserRatingFrom:(NSInteger)previousUserRating
 				to:(NSInteger)userRating {
 
 	self.userRatingLabel.text = [NSString stringWithFormat:@"%d", userRating];
 }
 
-- (void)ratingView:(SCRatingView *)ratingView didChangeRatingFrom:(CGFloat)previousRating
+- (void)ratingView:(SCRRatingView *)ratingView didChangeRatingFrom:(CGFloat)previousRating
 				to:(CGFloat)rating {
 	
 	self.ratingLabel.text = [NSString stringWithFormat:@"%0.1f", rating];

@@ -12,7 +12,7 @@
 #import "AppDelegate.h"
 #import "MainController.h"
 
-#import "SCMemoryManagement.h"
+#import "SCRMemoryManagement.h"
 
 @implementation AppDelegate
 
@@ -23,8 +23,8 @@
 
 - (void)dealloc {
 	
-	SC_RELEASE_SAFELY(_mainNavigationController);
-	SC_RELEASE_SAFELY(_window);
+	SCR_RELEASE_SAFELY(_mainNavigationController);
+	SCR_RELEASE_SAFELY(_window);
     
 	[super dealloc];
 }

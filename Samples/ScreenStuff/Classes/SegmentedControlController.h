@@ -9,19 +9,19 @@
 //	All rights reserved.
 //	
 //	Purpose
-//	SCSegmentedControl show-case with one, two, and three rows.
+//	SCRSegmentedControl show-case with one, two, and three rows.
 //
 
-@class SCSegmentedControl;
+@class SCRSegmentedControl;
 
 @interface SegmentedControlController : UIViewController {
 
 @private
-	SCSegmentedControl *_oneRowControl, *_twoRowControl, *_threeRowControl;
+	SCRSegmentedControl *_oneRowControl, *_twoRowControl, *_threeRowControl;
 	UILabel *_valueLabel;
 }
 
-@property (nonatomic, retain) IBOutlet SCSegmentedControl *oneRowControl, *twoRowControl, *threeRowControl;
+@property (nonatomic, retain) IBOutlet SCRSegmentedControl *oneRowControl, *twoRowControl, *threeRowControl;
 @property (nonatomic, retain) IBOutlet UILabel *valueLabel;
 
 - (IBAction)selectedIndexChanged:(id)sender;
