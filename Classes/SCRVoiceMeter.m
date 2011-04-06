@@ -55,7 +55,7 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 
 - (id)init {
 	
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		[self __initializeComponent];
 	}
 	

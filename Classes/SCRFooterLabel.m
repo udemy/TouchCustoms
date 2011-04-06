@@ -30,7 +30,7 @@
 
 - (id)init {
 	
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		
 		[self __initializeComponent];
 	}
@@ -40,7 +40,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
 	
-	if (self = [super initWithFrame:frame]) {
+	if ((self = [super initWithFrame:frame])) {
 		
 		[self __initializeComponent];
 	}
@@ -50,7 +50,7 @@
 
 - (id)initWithText:(NSString *)footerText {
 	
-	if (self = [super initWithFrame:CGRectMake(0, 0, 320, 100)]) {
+	if ((self = [super initWithFrame:CGRectMake(0, 0, 320, 100)])) {
 		
 		[self __initializeComponent];
 		

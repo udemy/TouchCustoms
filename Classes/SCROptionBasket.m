@@ -72,7 +72,7 @@
 
 - (id)init 
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		_selectedIndexes = [[NSMutableIndexSet alloc] init];
 		[self postProcessCreatedIndexes];
@@ -83,7 +83,7 @@
 
 - (id)initWithSelectType:(SCROptionSelectType)selectType
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		_selectType = selectType;
 	}
@@ -93,7 +93,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		id indexSet = [decoder decodeObjectForKey:kSelectedIndexesKey];
 		

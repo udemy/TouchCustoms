@@ -12,9 +12,9 @@
 //	SCRatingView that can be placed in a cell.
 //
 
-#import "SCRatingView.h"
+#import "SCRRatingView.h"
 
-@interface RatingCellView : SCRatingView {
+@interface RatingCellView : SCRRatingView {
 
 }
 

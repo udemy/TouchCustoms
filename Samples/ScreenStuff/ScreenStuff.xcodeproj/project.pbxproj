@@ -36,7 +36,6 @@
 		55D48E2E113D0BFE009CEF31 /* small-star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D48E29113D0BFE009CEF31 /* small-star-selected.png */; };
 		55D48E34113D0C15009CEF31 /* RatingCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D48E33113D0C15009CEF31 /* RatingCellView.m */; };
 		55E6656A113C7864003AF287 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55E66569113C7864003AF287 /* Icon.png */; };
-		55E6668E113CE9CF003AF287 /* libTouchCustoms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6666A113CE976003AF287 /* libTouchCustoms.a */; };
 		55E666C2113CEB74003AF287 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E666C1113CEB74003AF287 /* AVFoundation.framework */; };
 		55E666C4113CEB7C003AF287 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E666C3113CEB7C003AF287 /* AudioToolbox.framework */; };
 		55E6671A113CEBA5003AF287 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E66719113CEBA5003AF287 /* CFNetwork.framework */; };
@@ -44,21 +43,22 @@
 		55E6674C113CEECE003AF287 /* RatingViewStandAlone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55E6674B113CEECE003AF287 /* RatingViewStandAlone.xib */; };
 		55E6677B113CF16B003AF287 /* RatingViewInTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E6677A113CF16B003AF287 /* RatingViewInTableViewController.m */; };
 		55E6678B113CF381003AF287 /* RatingViewInTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55E6678A113CF381003AF287 /* RatingViewInTableView.xib */; };
+		A4E11B871317B4600002603C /* libTouchCustoms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E11B481317B3310002603C /* libTouchCustoms.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		55E66669113CE976003AF287 /* PBXContainerItemProxy */ = {
+		A4E11B471317B3310002603C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 55E66661113CE976003AF287 /* TouchCustoms.xcodeproj */;
+			containerPortal = A4E11B431317B3310002603C /* TouchCustoms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = TouchCustoms;
 		};
-		55E6668A113CE996003AF287 /* PBXContainerItemProxy */ = {
+		A4E11B881317B4660002603C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 55E66661113CE976003AF287 /* TouchCustoms.xcodeproj */;
+			containerPortal = A4E11B431317B3310002603C /* TouchCustoms.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* TouchCustoms */;
 			remoteInfo = TouchCustoms;
 		};
 /* End PBXContainerItemProxy section */
@@ -100,7 +100,6 @@
 		55D48E32113D0C15009CEF31 /* RatingCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCellView.h; sourceTree = "<group>"; };
 		55D48E33113D0C15009CEF31 /* RatingCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingCellView.m; sourceTree = "<group>"; };
 		55E66569113C7864003AF287 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		55E66661113CE976003AF287 /* TouchCustoms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchCustoms.xcodeproj; path = /Users/aleks/Projects/SC/TouchCustoms/TouchCustoms.xcodeproj; sourceTree = "<absolute>"; };
 		55E666C1113CEB74003AF287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		55E666C3113CEB7C003AF287 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		55E66719113CEBA5003AF287 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -111,6 +110,7 @@
 		55E6677A113CF16B003AF287 /* RatingViewInTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewInTableViewController.m; sourceTree = "<group>"; };
 		55E6678A113CF381003AF287 /* RatingViewInTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewInTableView.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A4E11B431317B3310002603C /* TouchCustoms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchCustoms.xcodeproj; path = ../../TouchCustoms.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +121,10 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				55E6668E113CE9CF003AF287 /* libTouchCustoms.a in Frameworks */,
 				55E666C2113CEB74003AF287 /* AVFoundation.framework in Frameworks */,
 				55E666C4113CEB7C003AF287 /* AudioToolbox.framework in Frameworks */,
 				55E6671A113CEBA5003AF287 /* CFNetwork.framework in Frameworks */,
+				A4E11B871317B4600002603C /* libTouchCustoms.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +193,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55E66661113CE976003AF287 /* TouchCustoms.xcodeproj */,
+				A4E11B431317B3310002603C /* TouchCustoms.xcodeproj */,
 				55E666C3113CEB7C003AF287 /* AudioToolbox.framework */,
 				55E666C1113CEB74003AF287 /* AVFoundation.framework */,
 				55E66719113CEBA5003AF287 /* CFNetwork.framework */,
@@ -244,14 +244,6 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		55E66662113CE976003AF287 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				55E6666A113CE976003AF287 /* libTouchCustoms.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		55E66747113CEE68003AF287 /* RatingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +255,14 @@
 				55D48E33113D0C15009CEF31 /* RatingCellView.m */,
 			);
 			name = RatingView;
+			sourceTree = "<group>";
+		};
+		A4E11B441317B3310002603C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4E11B481317B3310002603C /* libTouchCustoms.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +279,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				55E6668B113CE996003AF287 /* PBXTargetDependency */,
+				A4E11B891317B4660002603C /* PBXTargetDependency */,
 			);
 			name = ScreenStuff;
 			productName = ScreenStuff;
@@ -293,13 +293,20 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ScreenStuff" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 55E66662113CE976003AF287 /* Products */;
-					ProjectRef = 55E66661113CE976003AF287 /* TouchCustoms.xcodeproj */;
+					ProductGroup = A4E11B441317B3310002603C /* Products */;
+					ProjectRef = A4E11B431317B3310002603C /* TouchCustoms.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -310,11 +317,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		55E6666A113CE976003AF287 /* libTouchCustoms.a */ = {
+		A4E11B481317B3310002603C /* libTouchCustoms.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libTouchCustoms.a;
-			remoteRef = 55E66669113CE976003AF287 /* PBXContainerItemProxy */;
+			remoteRef = A4E11B471317B3310002603C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -370,10 +377,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		55E6668B113CE996003AF287 /* PBXTargetDependency */ = {
+		A4E11B891317B4660002603C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TouchCustoms;
-			targetProxy = 55E6668A113CE996003AF287 /* PBXContainerItemProxy */;
+			targetProxy = A4E11B881317B4660002603C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,7 +438,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -444,7 +451,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

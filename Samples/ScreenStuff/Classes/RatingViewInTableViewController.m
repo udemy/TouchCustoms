@@ -12,7 +12,7 @@
 #import "RatingCellView.h"
 #import "RatingViewInTableViewController.h"
 
-#import "SCMemoryManagement.h"
+#import "SCRMemoryManagement.h"
 
 @implementation RatingViewInTableViewController
 
@@ -23,10 +23,10 @@
 
 - (void)dealloc {
 	
-	SC_RELEASE_SAFELY(_xCodeRatingView);
-	SC_RELEASE_SAFELY(_eclipseRatingView);
-	SC_RELEASE_SAFELY(_xCodeCell);
-	SC_RELEASE_SAFELY(_eclipseCell);
+	SCR_RELEASE_SAFELY(_xCodeRatingView);
+	SCR_RELEASE_SAFELY(_eclipseRatingView);
+	SCR_RELEASE_SAFELY(_xCodeCell);
+	SCR_RELEASE_SAFELY(_eclipseCell);
 	
     [super dealloc];
 }

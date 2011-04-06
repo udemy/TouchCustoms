@@ -76,7 +76,7 @@
 
 - (id)initWithStyle:(SCRSegmentStyle)style frame:(CGRect)frame {
 	
-	if (self = [super initWithFrame:frame]) {
+	if ((self = [super initWithFrame:frame])) {
 		
 		[self __initializeComponent:style];
 	}
@@ -86,7 +86,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
 	
-	if (self = [super initWithCoder:decoder]) {
+	if ((self = [super initWithCoder:decoder])) {
 		
 		[self __initializeComponent:SCRSegmentCenter];
 	}
@@ -310,6 +310,8 @@ static CGFloat _BorderLocations[2] = { 0, 1 };
 			case SCRSegmentLeft:
 				foreRect.origin.x += kBorderWidth;
 				foreRect.size.width -= kBorderWidth;
+				break;
+			default:
 				break;
 		}
 	}

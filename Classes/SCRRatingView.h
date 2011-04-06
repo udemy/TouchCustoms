@@ -53,6 +53,7 @@
 	NSInteger _userRating; /* User rating is supposed to be integer. */
 	BOOL _highlighted;
 	NSArray	*_starViews;
+	NSArray	*_reflectionViews;
 	NSMutableDictionary	*_stateImageDictionary;
 	
 	id<SCRRatingDelegate> _delegate;
@@ -80,5 +81,7 @@
  * Make sure you call this method for all possible states for reach consistent look.
  */
 - (void)setStarImage:(UIImage *)image forState:(NSString *)state;
+
+- (void)setStarImagesForStates:(UIImage *)firstImage, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
