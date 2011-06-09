@@ -123,6 +123,7 @@ static const CGFloat kDefaultReflectionOpacity = 0.40;
 
 #pragma mark - Image Reflection
 
+CGImageRef CreateGradientImage(int, int);
 CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 	CGImageRef theCGImage = NULL;
 	
