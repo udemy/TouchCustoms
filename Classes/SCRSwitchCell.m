@@ -15,8 +15,6 @@
 @implementation SCRSwitchCell
 
 #define kOffset			10
-#define kSwitchWidth	97
-#define kSwitchHeight	27
 #define kTitleFontSize	17
 
 @synthesize titleLabel = _titleLabel, optionSwitch = _optionSwitch;
@@ -25,8 +23,10 @@
 	
 	CGFloat width = CGRectGetWidth(self.contentView.frame);
 	CGFloat height = CGRectGetHeight(self.contentView.frame);
+    
+    CGFloat switchWidth = CGRectGetWidth(self.optionSwitch.frame);
 	
-	CGRect result = CGRectMake(kOffset, 0, width - kSwitchWidth - kOffset * 3, height);
+	CGRect result = CGRectMake(kOffset, 0, width - switchWidth - kOffset * 3, height);
 	return result;
 }
 
@@ -34,14 +34,18 @@
 	
 	CGFloat width = CGRectGetWidth(self.contentView.frame);
 	CGFloat height = CGRectGetHeight(self.contentView.frame);
+    
+    CGFloat switchWidth = CGRectGetWidth(self.optionSwitch.frame);
+    CGFloat switchHeight = CGRectGetHeight(self.optionSwitch.frame);
 	
-	CGRect result = CGRectMake(width - kOffset - kSwitchWidth, (height - kSwitchHeight) / 2.,
-							   kSwitchWidth, kSwitchHeight);
+	CGRect result = CGRectMake(width - kOffset - switchWidth, (height - switchHeight) / 2.,
+							   switchWidth, switchHeight);
 	return result;
 }
 
 - (void)__initializeComponent {
 	
+    self.backgroundColor = [UIColor whiteColor];
 	self.selectionStyle = UITableViewCellSelectionStyleNone;
 	
 	_titleLabel = [[UILabel alloc] initWithFrame:[self __calculateTitleLabelRect]];
