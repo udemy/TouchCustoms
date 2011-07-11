@@ -21,13 +21,13 @@
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		[app setStatusBarHidden:value withAnimation:UIStatusBarAnimationSlide];
+		[app setStatusBarHidden:value withAnimation:UIStatusBarAnimationFade];
 		
 	} else {
 		
 		if ([app respondsToSelector:@selector(setStatusBarHidden:withAnimation:)]) {
 			
-			[app setStatusBarHidden:value withAnimation:UIStatusBarAnimationSlide];
+			[app setStatusBarHidden:value withAnimation:UIStatusBarAnimationFade];
 			
 		} else {
 			
