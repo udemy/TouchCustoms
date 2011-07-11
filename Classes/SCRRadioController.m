@@ -2,11 +2,8 @@
 //  SCRRadioViewController.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 12/22/09.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2009 Screen Customs s.r.o.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 12/22/09.
+//	aleks@screencustoms.com
 //	
 
 #import "SCRRadioController.h"

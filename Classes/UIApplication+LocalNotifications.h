@@ -2,17 +2,12 @@
 //  UIApplication+LocalNotifications.h
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 6/11/10.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2010 Screen Customs s.r.o.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 6/11/10.
+//	aleks@screencustoms.com
 //	
 //	Purpose
 //	Contains helper methods to work easily with Local notifications.
 //
-
-#import <Foundation/Foundation.h>
 
 @interface UIApplication (LocalNotifications)
 

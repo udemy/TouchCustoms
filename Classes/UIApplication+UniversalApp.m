@@ -2,11 +2,8 @@
 //  UIApplication+SCRMethods.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 6/11/10.
+//  Created by Aleks Nesterow-Rutkowski on 6/11/10.
 //	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2010 Screen Customs s.r.o.
-//	All rights reserved.
 //
 
 #import "UIApplication+UniversalApp.h"

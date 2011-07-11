@@ -2,11 +2,8 @@
 //  SCRGrfx.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 10/15/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009-2010 Screen Customs s.r.o.
-//  All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 10/15/09.
+//  aleks@screencustoms.com
 //
 
 #import "SCRGrfx.h"
@@ -39,19 +36,23 @@ void SCRContextAddRoundedRect(CGContextRef c, CGRect rect, CGFloat cornerRadius)
 	CGContextMoveToPoint(c, roundedRect.xLeft, roundedRect.yTopCorner);
 	
 	/* First corner */
-	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yTop, roundedRect.xLeftCorner, roundedRect.yTop, cornerRadius);
+	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yTop, roundedRect.xLeftCorner, roundedRect.yTop
+                           , cornerRadius);
 	CGContextAddLineToPoint(c, roundedRect.xRightCorner, roundedRect.yTop);
 	
 	/* Second corner */
-	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yTop, roundedRect.xRight, roundedRect.yTopCorner, cornerRadius);
+	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yTop, roundedRect.xRight, roundedRect.yTopCorner
+                           , cornerRadius);
 	CGContextAddLineToPoint(c, roundedRect.xRight, roundedRect.yBottomCorner);
 	
 	/* Third corner */
-	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yBottom, roundedRect.xRightCorner, roundedRect.yBottom, cornerRadius);
+	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yBottom, roundedRect.xRightCorner, roundedRect.yBottom
+                           , cornerRadius);
 	CGContextAddLineToPoint(c, roundedRect.xLeftCorner, roundedRect.yBottom);
 	
 	/* Fourth corner */
-	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yBottom, roundedRect.xLeft, roundedRect.yBottomCorner, cornerRadius);
+	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yBottom, roundedRect.xLeft, roundedRect.yBottomCorner
+                           , cornerRadius);
 	CGContextAddLineToPoint(c, roundedRect.xLeft, roundedRect.yTopCorner);
 	
 	/* Done */
@@ -71,7 +72,8 @@ void SCRContextAddLeftRoundedRect(CGContextRef c, CGRect rect, CGFloat radius) {
 	CGContextAddLineToPoint(c, roundedRect.xRight, roundedRect.yBottom);
 	CGContextAddLineToPoint(c, roundedRect.xLeftCorner, roundedRect.yBottom);
 	
-	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yBottom, roundedRect.xLeft, roundedRect.yBottomCorner, radius);
+	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yBottom, roundedRect.xLeft, roundedRect.yBottomCorner
+                           , radius);
 	
 	CGContextClosePath(c);
 }
@@ -103,7 +105,8 @@ void SCRContextAddLeftBottomRoundedRect(CGContextRef c, CGRect rect, CGFloat rad
 	CGContextAddLineToPoint(c, roundedRect.xRight, roundedRect.yBottom);
 	CGContextAddLineToPoint(c, roundedRect.xLeftCorner, roundedRect.yBottom);
 	
-	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yBottom, roundedRect.xLeft, roundedRect.yBottomCorner, radius);
+	CGContextAddArcToPoint(c, roundedRect.xLeft, roundedRect.yBottom, roundedRect.xLeft, roundedRect.yBottomCorner
+                           , radius);
 	
 	CGContextClosePath(c);
 }
@@ -118,7 +121,8 @@ void SCRContextAddRightRoundedRect(CGContextRef c, CGRect rect, CGFloat radius) 
 	CGContextAddLineToPoint(c, roundedRect.xRightCorner, roundedRect.yTop);
 	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yTop, roundedRect.xRight, roundedRect.yTopCorner, radius);
 	CGContextAddLineToPoint(c, roundedRect.xRight, roundedRect.yBottomCorner);
-	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yBottom, roundedRect.xRightCorner, roundedRect.yBottom, radius);
+	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yBottom, roundedRect.xRightCorner, roundedRect.yBottom
+                           , radius);
 	CGContextAddLineToPoint(c, roundedRect.xLeft, roundedRect.yBottom);
 	
 	CGContextClosePath(c);
@@ -148,7 +152,8 @@ void SCRContextAddRightBottomRoundedRect(CGContextRef c, CGRect rect, CGFloat ra
 	
 	CGContextAddLineToPoint(c, roundedRect.xRight, roundedRect.yTop);
 	CGContextAddLineToPoint(c, roundedRect.xRight, roundedRect.yBottomCorner);
-	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yBottom, roundedRect.xRightCorner, roundedRect.yBottom, radius);
+	CGContextAddArcToPoint(c, roundedRect.xRight, roundedRect.yBottom, roundedRect.xRightCorner, roundedRect.yBottom
+                           , radius);
 	CGContextAddLineToPoint(c, roundedRect.xLeft, roundedRect.yBottom);
 	
 	CGContextClosePath(c);

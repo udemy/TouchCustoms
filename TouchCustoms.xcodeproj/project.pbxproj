@@ -12,8 +12,6 @@
 		55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */; };
 		55031B3711C2B03B00143777 /* UIApplication+LocalNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 55031B3511C2B03B00143777 /* UIApplication+LocalNotifications.h */; };
 		55031B3811C2B03B00143777 /* UIApplication+LocalNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 55031B3611C2B03B00143777 /* UIApplication+LocalNotifications.m */; };
-		550320DB11CA8D0C00143777 /* UIImage+UniversalApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 550320D911CA8D0C00143777 /* UIImage+UniversalApp.h */; };
-		550320DC11CA8D0C00143777 /* UIImage+UniversalApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 550320DA11CA8D0C00143777 /* UIImage+UniversalApp.m */; };
 		551490A01149012600B7E4DA /* SCRRadioCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909C1149012600B7E4DA /* SCRRadioCell.h */; };
 		551490A11149012600B7E4DA /* SCRRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5514909D1149012600B7E4DA /* SCRRadioCell.m */; };
 		551490A21149012600B7E4DA /* SCRRadioController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5514909E1149012600B7E4DA /* SCRRadioController.h */; };
@@ -74,13 +72,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5501ADF2116F552D0085A394 /* SCRSegmentColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRSegmentColorScheme.h; path = Classes/SCRSegmentColorScheme.h; sourceTree = "<group>"; };
-		55031A8311C26ABB00143777 /* UIApplication+UniversalApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+UniversalApp.h"; path = "Classes/UIApplication+UniversalApp.h"; sourceTree = "<group>"; };
-		55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+UniversalApp.m"; path = "Classes/UIApplication+UniversalApp.m"; sourceTree = "<group>"; };
-		55031B3511C2B03B00143777 /* UIApplication+LocalNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+LocalNotifications.h"; path = "Classes/UIApplication+LocalNotifications.h"; sourceTree = "<group>"; };
-		55031B3611C2B03B00143777 /* UIApplication+LocalNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+LocalNotifications.m"; path = "Classes/UIApplication+LocalNotifications.m"; sourceTree = "<group>"; };
-		550320D911CA8D0C00143777 /* UIImage+UniversalApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+UniversalApp.h"; path = "Classes/UIImage+UniversalApp.h"; sourceTree = "<group>"; };
-		550320DA11CA8D0C00143777 /* UIImage+UniversalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+UniversalApp.m"; path = "Classes/UIImage+UniversalApp.m"; sourceTree = "<group>"; };
+		5501ADF2116F552D0085A394 /* SCRSegmentColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRSegmentColorScheme.h; path = Classes/SCRSegmentColorScheme.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55031A8311C26ABB00143777 /* UIApplication+UniversalApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "UIApplication+UniversalApp.h"; path = "Classes/UIApplication+UniversalApp.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55031A8411C26ABB00143777 /* UIApplication+UniversalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "UIApplication+UniversalApp.m"; path = "Classes/UIApplication+UniversalApp.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		55031B3511C2B03B00143777 /* UIApplication+LocalNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "UIApplication+LocalNotifications.h"; path = "Classes/UIApplication+LocalNotifications.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55031B3611C2B03B00143777 /* UIApplication+LocalNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "UIApplication+LocalNotifications.m"; path = "Classes/UIApplication+LocalNotifications.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5514909C1149012600B7E4DA /* SCRRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRRadioCell.h; path = Classes/SCRRadioCell.h; sourceTree = "<group>"; };
 		5514909D1149012600B7E4DA /* SCRRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRRadioCell.m; path = Classes/SCRRadioCell.m; sourceTree = "<group>"; };
 		5514909E1149012600B7E4DA /* SCRRadioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRRadioController.h; path = Classes/SCRRadioController.h; sourceTree = "<group>"; };
@@ -101,8 +97,8 @@
 		5588F72011197407002BF56E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5588F73E1119773C002BF56E /* SCRGrfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRGrfx.h; path = Classes/SCRGrfx.h; sourceTree = "<group>"; };
 		5588F73F1119773C002BF56E /* SCRGrfx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRGrfx.m; path = Classes/SCRGrfx.m; sourceTree = "<group>"; };
-		5588F75A1119774D002BF56E /* SCRViewSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRViewSlider.h; path = Classes/SCRViewSlider.h; sourceTree = "<group>"; };
-		5588F75B1119774D002BF56E /* SCRViewSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRViewSlider.m; path = Classes/SCRViewSlider.m; sourceTree = "<group>"; };
+		5588F75A1119774D002BF56E /* SCRViewSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRViewSlider.h; path = Classes/SCRViewSlider.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5588F75B1119774D002BF56E /* SCRViewSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRViewSlider.m; path = Classes/SCRViewSlider.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5588F75C1119774D002BF56E /* SCRVoiceMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRVoiceMeter.h; path = Classes/SCRVoiceMeter.h; sourceTree = "<group>"; };
 		5588F75D1119774D002BF56E /* SCRVoiceMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRVoiceMeter.m; path = Classes/SCRVoiceMeter.m; sourceTree = "<group>"; };
 		5588F76411197BBF002BF56E /* NSString+SCRMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "NSString+SCRMethods.h"; path = "Classes/NSString+SCRMethods.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -120,13 +116,13 @@
 		55A111A711383C5F00810178 /* SCRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRAppDelegate.m; path = Classes/SCRAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		55A55C0C1125E4DF0035CFBA /* SCRTabOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRTabOrder.h; path = Classes/SCRTabOrder.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		55A55C0D1125E4DF0035CFBA /* SCRTabOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRTabOrder.m; path = Classes/SCRTabOrder.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		55AD3973112D681F00E70986 /* SCRTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRTextFieldCell.h; path = Classes/SCRTextFieldCell.h; sourceTree = "<group>"; };
-		55AD3974112D681F00E70986 /* SCRTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRTextFieldCell.m; path = Classes/SCRTextFieldCell.m; sourceTree = "<group>"; };
+		55AD3973112D681F00E70986 /* SCRTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRTextFieldCell.h; path = Classes/SCRTextFieldCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55AD3974112D681F00E70986 /* SCRTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRTextFieldCell.m; path = Classes/SCRTextFieldCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		55AD3981112D733D00E70986 /* SCRColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRColorScheme.h; path = Classes/SCRColorScheme.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		55AD3A4D112D92BD00E70986 /* SCRSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRSwitchCell.h; path = Classes/SCRSwitchCell.h; sourceTree = "<group>"; };
-		55AD3A4E112D92BD00E70986 /* SCRSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRSwitchCell.m; path = Classes/SCRSwitchCell.m; sourceTree = "<group>"; };
-		55B66081115B7087009F3D3B /* UIActionSheet+SCRMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+SCRMethods.h"; path = "Classes/UIActionSheet+SCRMethods.h"; sourceTree = "<group>"; };
-		55B66082115B7087009F3D3B /* UIActionSheet+SCRMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+SCRMethods.m"; path = "Classes/UIActionSheet+SCRMethods.m"; sourceTree = "<group>"; };
+		55AD3A4D112D92BD00E70986 /* SCRSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRSwitchCell.h; path = Classes/SCRSwitchCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55AD3A4E112D92BD00E70986 /* SCRSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRSwitchCell.m; path = Classes/SCRSwitchCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		55B66081115B7087009F3D3B /* UIActionSheet+SCRMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "UIActionSheet+SCRMethods.h"; path = "Classes/UIActionSheet+SCRMethods.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55B66082115B7087009F3D3B /* UIActionSheet+SCRMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "UIActionSheet+SCRMethods.m"; path = "Classes/UIActionSheet+SCRMethods.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		55E466F011203605000B710E /* NSMutableArray+SCRQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SCRQueue.h"; path = "Classes/NSMutableArray+SCRQueue.h"; sourceTree = "<group>"; };
 		55E466F111203605000B710E /* NSMutableArray+SCRQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SCRQueue.m"; path = "Classes/NSMutableArray+SCRQueue.m"; sourceTree = "<group>"; };
 		55E46A461120A786000B710E /* SCRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRLog.h; path = Classes/SCRLog.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -227,8 +223,6 @@
 			children = (
 				5588F73E1119773C002BF56E /* SCRGrfx.h */,
 				5588F73F1119773C002BF56E /* SCRGrfx.m */,
-				550320D911CA8D0C00143777 /* UIImage+UniversalApp.h */,
-				550320DA11CA8D0C00143777 /* UIImage+UniversalApp.m */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -344,7 +338,6 @@
 				5501ADF3116F552D0085A394 /* SCRSegmentColorScheme.h in Headers */,
 				55031A8511C26ABB00143777 /* UIApplication+UniversalApp.h in Headers */,
 				55031B3711C2B03B00143777 /* UIApplication+LocalNotifications.h in Headers */,
-				550320DB11CA8D0C00143777 /* UIImage+UniversalApp.h in Headers */,
 				55F0B0FF1211EE3600AFFD7E /* NSArray+Linq.h in Headers */,
 				55FE681D12770E750014AD9B /* SCROptionBasket.h in Headers */,
 				55FE681F12770E750014AD9B /* SCROptionTableController.h in Headers */,
@@ -438,7 +431,6 @@
 				55B66084115B7087009F3D3B /* UIActionSheet+SCRMethods.m in Sources */,
 				55031A8611C26ABB00143777 /* UIApplication+UniversalApp.m in Sources */,
 				55031B3811C2B03B00143777 /* UIApplication+LocalNotifications.m in Sources */,
-				550320DC11CA8D0C00143777 /* UIImage+UniversalApp.m in Sources */,
 				55F0B1001211EE3600AFFD7E /* NSArray+Linq.m in Sources */,
 				55FE681E12770E750014AD9B /* SCROptionBasket.m in Sources */,
 				55FE682012770E750014AD9B /* SCROptionTableController.m in Sources */,

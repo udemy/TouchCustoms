@@ -2,11 +2,8 @@
 //  SCRGrfx.h
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 10/15/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009, Screen Customs s.r.o.
-//  All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 10/15/09.
+//  aleks@screencustoms.com
 //  
 //  Purpose
 //	Contains extension methods for Core Graphics.

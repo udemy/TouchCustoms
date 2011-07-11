@@ -2,11 +2,8 @@
 //  SCRRadioViewController.h
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 12/22/09.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2009 Screen Customs s.r.o.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 12/22/09.
+//	aleks@screencustoms.com
 //	
 //	Purpose
 //	Provides a generic way to display one-choice options.
@@ -23,7 +20,7 @@
 @interface SCRRadioController : UITableViewController {
 	
 @private
-	id<SCRRadioControllerDelegate> _delegate;
+	id <SCRRadioControllerDelegate> _delegate;
 	
 	NSUInteger _selectedIndex;
 	NSArray *_optionList;

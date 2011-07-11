@@ -2,11 +2,8 @@
 //  SCROptionBasket.h
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 10/26/10.
+//  Created by Aleks Nesterow-Rutkowski on 10/26/10.
 //	aleks@screencustoms.com
-//	
-//  Copyright © 2010 Screencustoms, LLC.
-//	All rights reserved.
 //	
 //	Purpose
 //	Contains a full list of elements and remembers the selected element or a series of elements.

@@ -2,11 +2,8 @@
 //  SCRTabOrder.h
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 2/12/10.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2010 Screencustoms, LLC.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 2/12/10.
+//	aleks@screencustoms.com
 //	
 //	Purpose
 //	Allows to go from one field to another using Next button on the screen keyboard.

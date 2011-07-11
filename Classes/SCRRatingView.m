@@ -2,10 +2,8 @@
 //  SCRRatingView.m
 //  Touch Customs
 //
-//  Created by Aleks Nesterow on 7/21/09.
-//  aleks.nesterow@gmail.com
-//
-//  Copyright © 2009 Screen Customs s.r.o. All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 7/21/09.
+//  aleks@screencustoms.com
 //
 
 #import "SCRRatingView.h"
@@ -23,7 +21,7 @@
 typedef UIImageView			StarView;
 typedef UIImageView *		StarViewRef;
 
-// image reflection
+/* Image reflection */
 static const CGFloat kDefaultReflectionFraction = (2.0 / 3.0);
 static const CGFloat kDefaultReflectionOpacity = 0.40;
 
@@ -127,35 +125,35 @@ CGImageRef CreateGradientImage(int, int);
 CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 	CGImageRef theCGImage = NULL;
 	
-	// gradient is always black-white and the mask must be in the gray colorspace
+	/* Gradient is always black-white and the mask must be in the gray colorspace. */
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
 	
-	// create the bitmap context
+	/* Create the bitmap context. */
 	CGContextRef gradientBitmapContext = CGBitmapContextCreate(NULL, pixelsWide, pixelsHigh,
 															   8, 0, colorSpace, kCGImageAlphaNone);
 	
-	// define the start and end grayscale values (with the alpha, even though
-	// our bitmap context doesn't support alpha the gradient requires it)
+	/* Define the start and end grayscale values (with the alpha, even though
+	 * our bitmap context doesn't support alpha the gradient requires it). */
 	CGFloat colors[] = {0.0, 1.0, 1.0, 1.0};
 	
-	// create the CGGradient and then release the gray color space
+	/* Create the CGGradient and then release the gray color space. */
 	CGGradientRef grayScaleGradient = CGGradientCreateWithColorComponents(colorSpace, colors, NULL, 2);
 	CGColorSpaceRelease(colorSpace);
 	
-	// create the start and end points for the gradient vector (straight down)
+	/* Create the start and end points for the gradient vector (straight down). */
 	CGPoint gradientStartPoint = CGPointZero;
 	CGPoint gradientEndPoint = CGPointMake(0, pixelsHigh);
 	
-	// draw the gradient into the gray bitmap context
+	/* Draw the gradient into the gray bitmap context. */
 	CGContextDrawLinearGradient(gradientBitmapContext, grayScaleGradient, gradientStartPoint,
 								gradientEndPoint, kCGGradientDrawsAfterEndLocation);
 	CGGradientRelease(grayScaleGradient);
 	
-	// convert the context into a CGImageRef and release the context
+	/* Convert the context into a CGImageRef and release the context. */
 	theCGImage = CGBitmapContextCreateImage(gradientBitmapContext);
 	CGContextRelease(gradientBitmapContext);
 	
-	// return the imageref containing the gradient
+	/* Return the imageref containing the gradient. */
     return theCGImage;
 }
 
@@ -167,12 +165,12 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
 		scale = [UIScreen mainScreen].scale;
 		
-	// create a 2 bit CGImage containing a gradient that will be used for masking the 
-	// main view content to create the 'fade' of the reflection.  The CGImageCreateWithMask
-	// function will stretch the bitmap image as required, so we can create a 1 pixel wide gradient
+	/* Create a 2 bit CGImage containing a gradient that will be used for masking the 
+	 * main view content to create the 'fade' of the reflection.  The CGImageCreateWithMask
+	 * function will stretch the bitmap image as required, so we can create a 1 pixel wide gradient. */
 	CGImageRef gradientMaskImage = CreateGradientImage(1, height * scale);
 
-	// create a bitmap graphics context the size of the image
+	/* Create a bitmap graphics context the size of the image. */
 	CGSize imageSize = CGSizeMake(fromImage.image.size.width, height);
 	if (UIGraphicsBeginImageContextWithOptions) {
 		UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0f);
@@ -182,20 +180,22 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 	
 	CGContextRef mainViewContentContext = UIGraphicsGetCurrentContext();
 
-	// create an image by masking the bitmap of the mainView content with the gradient view
-	// then release the  pre-masked content bitmap and the gradient bitmap
-	CGContextClipToMask(mainViewContentContext, CGRectMake(0.0, 0.0, fromImage.image.size.width, height), gradientMaskImage);
+	/* Create an image by masking the bitmap of the mainView content with the gradient view
+	 * then release the  pre-masked content bitmap and the gradient bitmap. */
+	CGContextClipToMask(mainViewContentContext, CGRectMake(0.0, 0.0, fromImage.image.size.width, height)
+                        , gradientMaskImage);
 	CGImageRelease(gradientMaskImage);
 
-	// In order to grab the part of the image that we want to render, we move the context origin to the
-	// height of the image that we want to capture, then we flip the context so that the image draws upside down.
+	/* In order to grab the part of the image that we want to render, we move the context origin to the
+	 * height of the image that we want to capture, then we flip the context so that the image draws upside down. */
 	CGContextTranslateCTM(mainViewContentContext, 0.0, height);
 	CGContextScaleCTM(mainViewContentContext, 1.0, -1.0);
 	
-	// draw the image into the bitmap context
-	CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, fromImage.image.size.width, height), fromImage.image.CGImage);
+	/* Draw the image into the bitmap context. */
+	CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, fromImage.image.size.width, height)
+                       , fromImage.image.CGImage);
 	
-	// create CGImageRef of the main view bitmap content, and then release that bitmap context
+	/* Create CGImageRef of the main view bitmap content, and then release that bitmap context. */
 	UIImage *reflectionImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	
@@ -226,7 +226,11 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 		[self addSubview:starView];
 		[starView release];
 
-		StarViewRef reflectionView = [[StarView alloc] initWithFrame:CGRectMake(i * starWidth, height * 0.5, starWidth, height * 0.5 * kDefaultReflectionFraction)];
+		StarViewRef reflectionView;
+        reflectionView = [[StarView alloc] initWithFrame:CGRectMake(i * starWidth
+                                                                    , height * 0.5
+                                                                    , starWidth
+                                                                    , height * 0.5 * kDefaultReflectionFraction)];
 		reflectionView.clearsContextBeforeDrawing = YES;
 		reflectionView.contentMode = UIViewContentModeCenter;
 		reflectionView.multipleTouchEnabled = NO;
@@ -265,7 +269,8 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 		starView.frame = CGRectMake(i * starWidth, y, starWidth, height * 0.5);
 
 		StarViewRef reflectionView = [_reflectionViews objectAtIndex:i];
-		reflectionView.frame = CGRectMake(i * starWidth, y + height * 0.5, starWidth, height * 0.5 * kDefaultReflectionFraction);
+		reflectionView.frame = CGRectMake(i * starWidth, y + height * 0.5
+                                          , starWidth, height * 0.5 * kDefaultReflectionFraction);
 	}
 }
 
@@ -371,7 +376,8 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 		starView.image = [self __imageForState:kSCRatingViewHot fromDictionary:stateImageDict];
 
 		StarViewRef reflectionView = [_reflectionViews objectAtIndex:i];
-		reflectionView.image = [self reflectedImage:starView withHeight:starView.image.size.height * kDefaultReflectionFraction];
+		reflectionView.image = [self reflectedImage:starView
+                                         withHeight:starView.image.size.height * kDefaultReflectionFraction];
 	}
 	
 	/* Leaving only star borders for the others. */
@@ -382,7 +388,8 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 		starView.image = [self __imageForState:kSCRatingViewNonSelected fromDictionary:stateImageDict];
 
 		StarViewRef reflectionView = [_reflectionViews objectAtIndex:i];
-		reflectionView.image = [self reflectedImage:starView withHeight:starView.image.size.height * kDefaultReflectionFraction];
+		reflectionView.image = [self reflectedImage:starView
+                                         withHeight:starView.image.size.height * kDefaultReflectionFraction];
 	}
 }
 
@@ -406,7 +413,8 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 			starView.image = [self __imageForState:kSCRatingViewSelected fromDictionary:stateImageDict];
 			
 			StarViewRef reflectionView = [_reflectionViews objectAtIndex:i];
-			reflectionView.image = [self reflectedImage:starView withHeight:starView.image.size.height * kDefaultReflectionFraction];
+			reflectionView.image = [self reflectedImage:starView
+                                             withHeight:starView.image.size.height * kDefaultReflectionFraction];
 		}
 		
 		/* Now set images for a half star if any. */
@@ -417,7 +425,8 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 			starView.image = [self __imageForState:kSCRatingViewHalfSelected fromDictionary:stateImageDict];
 			
 			StarViewRef reflectionView = [_reflectionViews objectAtIndex:counter];
-			reflectionView.image = [self reflectedImage:starView withHeight:starView.image.size.height * kDefaultReflectionFraction];
+			reflectionView.image = [self reflectedImage:starView
+                                             withHeight:starView.image.size.height * kDefaultReflectionFraction];
 			
 			counter++;
 		}
@@ -431,7 +440,8 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh) {
 		starView.image = [self __imageForState:kSCRatingViewNonSelected fromDictionary:stateImageDict];
 
 		StarViewRef reflectionView = [_reflectionViews objectAtIndex:i];
-		reflectionView.image = [self reflectedImage:starView withHeight:starView.image.size.height * kDefaultReflectionFraction];
+		reflectionView.image = [self reflectedImage:starView
+                                         withHeight:starView.image.size.height * kDefaultReflectionFraction];
 	}
 }
 

@@ -2,11 +2,8 @@
 //  SCRSegmentedControl.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 1/25/10.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2010 Screen Customs s.r.o.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 1/25/10.
+//	aleks@screencustoms.com
 //
 
 #import "SCRSegment.h"

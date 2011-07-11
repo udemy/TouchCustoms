@@ -1,11 +1,8 @@
 //
 //  SCRMemoryManagement.h
 //
-//  Created by Aleks Nesterow on 11/19/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009 Screencustoms, LLC.
-//  All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 11/19/09.
+//  aleks@screencustoms.com
 //  
 //  Purpose
 //	Contains macros to make memory management easier.

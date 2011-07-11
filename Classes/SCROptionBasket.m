@@ -2,10 +2,8 @@
 //  SCROptionBasket.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 10/26/10.
+//  Created by Aleks Nesterow-Rutkowski on 10/26/10.
 //	aleks@screencustoms.com
-//	
-//  Copyright © 2010 Screencustoms. All rights reserved.
 //
 
 #import "SCROptionBasket.h"

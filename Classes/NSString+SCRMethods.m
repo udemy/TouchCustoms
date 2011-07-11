@@ -2,10 +2,8 @@
 //  NSString+ExtensionMethods.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 7/19/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009-2010 Screencustoms. All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 7/19/09.
+//  aleks@screencustoms.com
 //  
 
 #import "NSString+SCRMethods.h"

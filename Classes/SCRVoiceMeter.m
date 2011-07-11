@@ -2,11 +2,8 @@
 //  SCRVoiceMeter.m
 //  iAudition
 //
-//  Created by Aleks Nesterow on 11/15/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009 Screen Customs s.r.o.
-//  All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 11/15/09.
+//  aleks@screencustoms.com
 //
 
 #import "SCRVoiceMeter.h"
@@ -43,7 +40,8 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 	UInt32 maxPacketSize = format->mBytesPerPacket;
 	if (0 == maxPacketSize) {
 		UInt32 maxVBRPacketSize = sizeof(maxPacketSize);
-		CheckIfAudioQueueError(AudioQueueGetProperty(audioQueue, kAudioQueueProperty_MaximumOutputPacketSize, &maxPacketSize, &maxVBRPacketSize),
+		CheckIfAudioQueueError(AudioQueueGetProperty(audioQueue, kAudioQueueProperty_MaximumOutputPacketSize
+                                                     , &maxPacketSize, &maxVBRPacketSize),
 							   @"Cannot get the value of the kAudioQueueProperty_MaximumOutputPacketSize property.");
 	}
 	
@@ -173,7 +171,8 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 
 - (void)updateMeters {
 	
-	OSStatus status = AudioQueueGetProperty(queue, kAudioQueueProperty_CurrentLevelMeterDB, channelLevels, &channelLevelsDataSize);
+	OSStatus status = AudioQueueGetProperty(queue, kAudioQueueProperty_CurrentLevelMeterDB, channelLevels
+                                            , &channelLevelsDataSize);
 	CheckIfAudioQueueError(status, @"Cannot get the value of the kAudioQueueProperty_CurrentLevelMeterDB property.");
 }
 

@@ -2,11 +2,8 @@
 //  NSArray+Linq.m
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 8/10/10.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2010 Screencustoms.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 8/10/10.
+//	aleks@screencustoms.com
 //
 
 #import "NSArray+Linq.h"

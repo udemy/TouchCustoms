@@ -2,11 +2,8 @@
 //  SCRViewSlider.h
 //  iAudition
 //
-//  Created by Aleks Nesterow on 10/20/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009 Screen Customs s.r.o.
-//  All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 10/20/09.
+//  aleks@screencustoms.com
 //  
 //  Purpose
 //  There are cases when the screen keyboard hides a text-field. SCRViewSlider allows to slide the view up to keep that text-field

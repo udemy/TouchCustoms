@@ -2,18 +2,13 @@
 //  SCRTextFieldCell.h
 //  TouchCustoms
 //
-//  Created by Aleks Nesterow on 2/18/10.
-//	aleks.nesterow@gmail.com
-//	
-//  Copyright © 2010 Screen Customs s.r.o.
-//	All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 2/18/10.
+//	aleks@screencustoms.com
 //	
 //	Purpose
 //	Represents UITableViewCell with UITextField.
 //	Can be useful for entering credentials for example.
 //
-
-#import <UIKit/UIKit.h>
 
 @interface SCRTextFieldCell : UITableViewCell {
 

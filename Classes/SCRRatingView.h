@@ -2,10 +2,8 @@
 //  SCRRatingView.h
 //  Touch Customs
 //
-//  Created by Aleks Nesterow on 7/21/09.
-//  aleks.nesterow@gmail.com
-//  
-//  Copyright © 2009 Screen Customs s.r.o. All rights reserved.
+//  Created by Aleks Nesterow-Rutkowski on 7/21/09.
+//  aleks@screencustoms.com
 //  
 //  Purpose
 //  Displays a 5-star rating with ability to set user rating.
@@ -30,7 +28,8 @@
  * @param previousUserRating	Previous userRating property value.
  * @param userRating			Current userRating property value.
  */
-- (void)ratingView:(SCRRatingView *)ratingView didChangeUserRatingFrom:(NSInteger)previousUserRating to:(NSInteger)userRating;
+- (void)ratingView:(SCRRatingView *)ratingView didChangeUserRatingFrom:(NSInteger)previousUserRating
+                to:(NSInteger)userRating;
 
 @optional
 
@@ -56,7 +55,7 @@
 	NSArray	*_reflectionViews;
 	NSMutableDictionary	*_stateImageDictionary;
 	
-	id<SCRRatingDelegate> _delegate;
+	id <SCRRatingDelegate> _delegate;
 }
 
 /** Use 0 to specify that there is no rate yet. All the other values will be aligned to [1-5] range. */
