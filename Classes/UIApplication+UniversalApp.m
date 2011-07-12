@@ -14,8 +14,6 @@
 
 	UIApplication *app = [UIApplication sharedApplication];
 	
-#ifdef __IPHONE_3_2
-	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		[app setStatusBarHidden:value withAnimation:UIStatusBarAnimationFade];
@@ -43,12 +41,6 @@
 			[anInvocation invoke];
 		}
 	}
-	
-#else
-	
-	[app setStatusBarHidden:value animated:YES];
-	
-#endif
 }
 
 @end

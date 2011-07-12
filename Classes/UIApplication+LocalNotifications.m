@@ -17,8 +17,6 @@
 
 + (void)showLocalNotification:(NSString *)text actionButton:(NSString *)buttonText {
 
-#ifdef __IPHONE_4_0	
-	
 	Class notificationClass = NSClassFromString(@"UILocalNotification");
 	
 	if (notificationClass) {
@@ -33,8 +31,6 @@
 			[notification release];
 		}
 	}
-	
-#endif		
 }
 
 @end
