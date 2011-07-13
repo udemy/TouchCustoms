@@ -73,7 +73,7 @@
  */
 @property (nonatomic, assign, getter=isHighlighted) BOOL highlighted;
 
-@property (nonatomic, assign) IBOutlet id<SCRRatingDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id <SCRRatingDelegate> delegate;
 
 /**
  * Customizes standard star images to the custom ones you specify here.

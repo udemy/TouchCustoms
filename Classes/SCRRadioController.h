@@ -28,7 +28,7 @@
 	SEL _selector;
 }
 
-@property (nonatomic, assign) id<SCRRadioControllerDelegate> delegate;
+@property (nonatomic, assign) id <SCRRadioControllerDelegate> delegate;
 
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, retain) NSArray *optionList;
