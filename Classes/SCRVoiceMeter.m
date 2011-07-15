@@ -138,7 +138,7 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 		SCR_LOG_ERROR(CAT, @"Cannot apply Record category to AVAudioSession: %@ (%@)", error, error.userInfo);
 	} else {
 		
-		error = NULL;
+		error = nil;
 		[[AVAudioSession sharedInstance] setActive:YES error:&error];
 		
 		if (error) {
