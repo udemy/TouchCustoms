@@ -53,11 +53,12 @@
 		55A55C0F1125E4DF0035CFBA /* SCRTabOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A55C0D1125E4DF0035CFBA /* SCRTabOrder.m */; };
 		55AD3975112D681F00E70986 /* SCRTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD3973112D681F00E70986 /* SCRTextFieldCell.h */; };
 		55AD3976112D681F00E70986 /* SCRTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD3974112D681F00E70986 /* SCRTextFieldCell.m */; };
-		55AD3982112D733D00E70986 /* SCRColorScheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD3981112D733D00E70986 /* SCRColorScheme.h */; };
+		55AD3982112D733D00E70986 /* SCRURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD3981112D733D00E70986 /* SCRURLConnection.h */; };
 		55AD3A4F112D92BD00E70986 /* SCRSwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD3A4D112D92BD00E70986 /* SCRSwitchCell.h */; };
 		55AD3A50112D92BD00E70986 /* SCRSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD3A4E112D92BD00E70986 /* SCRSwitchCell.m */; };
 		55B66083115B7087009F3D3B /* UIActionSheet+SCRMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 55B66081115B7087009F3D3B /* UIActionSheet+SCRMethods.h */; };
 		55B66084115B7087009F3D3B /* UIActionSheet+SCRMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B66082115B7087009F3D3B /* UIActionSheet+SCRMethods.m */; };
+		55DDE2D413D8AD0100E000F2 /* SCRURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE2D213D8AD0100E000F2 /* SCRURLConnection.m */; };
 		55E466F211203605000B710E /* NSMutableArray+SCRQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E466F011203605000B710E /* NSMutableArray+SCRQueue.h */; };
 		55E466F311203605000B710E /* NSMutableArray+SCRQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E466F111203605000B710E /* NSMutableArray+SCRQueue.m */; };
 		55E46A471120A786000B710E /* SCRLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E46A461120A786000B710E /* SCRLog.h */; };
@@ -118,11 +119,12 @@
 		55A55C0D1125E4DF0035CFBA /* SCRTabOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRTabOrder.m; path = Classes/SCRTabOrder.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		55AD3973112D681F00E70986 /* SCRTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRTextFieldCell.h; path = Classes/SCRTextFieldCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		55AD3974112D681F00E70986 /* SCRTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRTextFieldCell.m; path = Classes/SCRTextFieldCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		55AD3981112D733D00E70986 /* SCRColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRColorScheme.h; path = Classes/SCRColorScheme.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		55AD3981112D733D00E70986 /* SCRURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRURLConnection.h; path = Classes/SCRURLConnection.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		55AD3A4D112D92BD00E70986 /* SCRSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRSwitchCell.h; path = Classes/SCRSwitchCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		55AD3A4E112D92BD00E70986 /* SCRSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SCRSwitchCell.m; path = Classes/SCRSwitchCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		55B66081115B7087009F3D3B /* UIActionSheet+SCRMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "UIActionSheet+SCRMethods.h"; path = "Classes/UIActionSheet+SCRMethods.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		55B66082115B7087009F3D3B /* UIActionSheet+SCRMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "UIActionSheet+SCRMethods.m"; path = "Classes/UIActionSheet+SCRMethods.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		55DDE2D213D8AD0100E000F2 /* SCRURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRURLConnection.m; path = Classes/SCRURLConnection.m; sourceTree = "<group>"; };
 		55E466F011203605000B710E /* NSMutableArray+SCRQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SCRQueue.h"; path = "Classes/NSMutableArray+SCRQueue.h"; sourceTree = "<group>"; };
 		55E466F111203605000B710E /* NSMutableArray+SCRQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SCRQueue.m"; path = "Classes/NSMutableArray+SCRQueue.m"; sourceTree = "<group>"; };
 		55E46A461120A786000B710E /* SCRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCRLog.h; path = Classes/SCRLog.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -205,7 +207,8 @@
 				55A111A711383C5F00810178 /* SCRAppDelegate.m */,
 				55E46A461120A786000B710E /* SCRLog.h */,
 				5588F71611197177002BF56E /* SCRMemoryManagement.h */,
-				55AD3981112D733D00E70986 /* SCRColorScheme.h */,
+				55AD3981112D733D00E70986 /* SCRURLConnection.h */,
+				55DDE2D213D8AD0100E000F2 /* SCRURLConnection.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -323,7 +326,7 @@
 				55E46A471120A786000B710E /* SCRLog.h in Headers */,
 				55A55C0E1125E4DF0035CFBA /* SCRTabOrder.h in Headers */,
 				55AD3975112D681F00E70986 /* SCRTextFieldCell.h in Headers */,
-				55AD3982112D733D00E70986 /* SCRColorScheme.h in Headers */,
+				55AD3982112D733D00E70986 /* SCRURLConnection.h in Headers */,
 				55AD3A4F112D92BD00E70986 /* SCRSwitchCell.h in Headers */,
 				55A111A411383C5200810178 /* SCRSettingsService.h in Headers */,
 				55A111A811383C5F00810178 /* SCRAppDelegate.h in Headers */,
@@ -434,6 +437,7 @@
 				55F0B1001211EE3600AFFD7E /* NSArray+Linq.m in Sources */,
 				55FE681E12770E750014AD9B /* SCROptionBasket.m in Sources */,
 				55FE682012770E750014AD9B /* SCROptionTableController.m in Sources */,
+				55DDE2D413D8AD0100E000F2 /* SCRURLConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
