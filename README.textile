@@ -1,5 +1,3 @@
-h1. English
-
 TouchCustoms is a Cocoa Touch static library that contains a number of reusable components that we use in our projects on a daily basis.
 * See "Wiki":http://wiki.github.com/nesterow/TouchCustoms/ for documentation.
 * "*F.A.Q.*":https://github.com/nesterow/TouchCustoms/wiki/FAQ
@@ -12,18 +10,3 @@ h2. Component list
 # @SCRSegmentedControl@ - Multi-row @UISegmentedControl@.
 # @SCRSymbolicProgressBar@ - A progress-bar that uses a series of identical symbols to represent the value of progress.
 # @NSArray (Linq)@ - Category that adds some .NET LINQ abilities to Objective C. "Explanation on how to use that in your projects":http://screencustoms.com/post/933566043/a-little-bit-of-linq-in-objective-c
-
-h1. Беларуская
-
-TouchCustoms - гэта статычная бібліятэка для Cocoa Touch, якая ўтрымоўвае некалькі кампанэнтаў для паўторнага выкарыстаньня, каторыя мы ўжываем у сваіх праектах што-дзень.
-* Гл. "Вікі":http://wiki.github.com/nesterow/TouchCustoms/, калі вы ў пошуках дакумэнтацыі.
-* "*Часта задаваныя пытаньні*":https://github.com/nesterow/TouchCustoms/wiki/FAQ
-* "Ліцэнзія":http://github.com/nesterow/TouchCustoms/blob/master/LICENSE
-
-h2. Сьпіс кампанэнтаў
-
-# @SCRMemoryManagement@ - Спрашчае кіраваньне памяцяй.
-# @SCRRatingView@ - 5-ці-зоркавы рэйтынґ-вію, што дазваляе карыстальніку ўсталёўваць рэйтынґ.
-# @SCRSegmentedControl@ - Шмат-радковы @UISegmentedControl@.
-# @SCRSymbolicProgressBar@ - Проґрэс-бар, які дзеля адлюстраваньня стану выкарыстоўвае шэраг аднолькавых малюнкаў.
-# @NSArray (Linq)@ - Катэґорыя, якая дадае у Objective C штосьці з мажлівасьцяў .NET LINQ. "Тлумачэньне па выкарыстаньні ў вашых праектах":http://screencustoms.com/post/933566043/a-little-bit-of-linq-in-objective-c (на анґельскай)
