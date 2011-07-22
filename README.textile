@@ -5,8 +5,10 @@ TouchCustoms is a Cocoa Touch static library that contains a number of reusable 
 
 h2. Component list
 
+# @SCRURLConnection@ - Light-weight @NSURLConnection@ wrapper that provides handy GCD-targeted API and allows to fulfill most network operations without including heavy 3rd party libs.
 # @SCRMemoryManagement@ - Make memory management easier.
 # @SCRRatingView@ - 5-star rating-view that allows to set ratings yourself.
 # @SCRSegmentedControl@ - Multi-row @UISegmentedControl@.
 # @SCRSymbolicProgressBar@ - A progress-bar that uses a series of identical symbols to represent the value of progress.
 # @NSArray (Linq)@ - Category that adds some .NET LINQ abilities to Objective C. "Explanation on how to use that in your projects":http://screencustoms.com/post/933566043/a-little-bit-of-linq-in-objective-c
+# and growing... see source for the full list
