@@ -1,6 +1,5 @@
 TouchCustoms is a Cocoa Touch static library that contains a number of reusable components that we use in our projects on a daily basis.
 * See "Wiki":http://wiki.github.com/nesterow/TouchCustoms/ for documentation.
-* "*F.A.Q.*":https://github.com/nesterow/TouchCustoms/wiki/FAQ
 * "License":http://github.com/nesterow/TouchCustoms/blob/master/LICENSE
 
 h2. Component list
