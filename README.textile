@@ -11,3 +11,7 @@ h2. Component list
 # @SCRSymbolicProgressBar@ - A progress-bar that uses a series of identical symbols to represent the value of progress.
 # @NSArray (Linq)@ - Category that adds some .NET LINQ abilities to Objective C. "Explanation on how to use that in your projects":https://github.com/nesterow/TouchCustoms/wiki/A-little-bit-of-LINQ-in-Objective-C
 # and growing... see source for the full list
+
+h2. Documentation
+
+Please, see "Wiki":https://github.com/nesterow/TouchCustoms/wiki/_pages section. It has some to-the-subject articles.
