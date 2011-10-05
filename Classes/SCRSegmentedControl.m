@@ -38,7 +38,7 @@
 }
 
 @synthesize columnCount = _columnCount, rowCount = _rowCount;
-@synthesize columnPattern = _columnPattern;
+@synthesize columnPattern = _columnPattern, columnProportions = _columnPropertions;
 @synthesize segmentTitles = _segmentTitles, segmentImages = _segmentImages;
 @synthesize selectedIndex = _selectedIndex;
 
@@ -141,11 +141,57 @@
 - (void)dealloc {
 	
 	SCR_RELEASE_SAFELY(_columnPattern);
+    SCR_RELEASE_SAFELY(_columnPropertions);
 	SCR_RELEASE_SAFELY(_segmentTitles);
 	SCR_RELEASE_SAFELY(_segmentImages);
 	SCR_RELEASE_SAFELY(_segments);
 	
 	[super dealloc];
+}
+
+- (NSArray *)proportionsForRow:(NSUInteger)row columnCount:(NSUInteger)columnCount
+{
+    NSArray *result = nil;
+    
+    if (self.columnProportions.count > row)
+    {   
+        result = [self.columnProportions objectAtIndex:row];
+        
+        if (result.count != columnCount)
+        {
+            result = nil;
+        }
+        else
+        {
+            float wholeSum = 0;
+            
+            for (NSNumber *number in result)
+            {
+                float currentProportion = [number floatValue];
+                
+                if (currentProportion < 0)
+                {
+                    result = nil;
+                    break;
+                }
+                else
+                {
+                    wholeSum += currentProportion;
+                }
+            }
+            
+            if (1 != wholeSum)
+            {
+                result = nil;
+            }
+            else
+            {
+                /* Proportions specified for this row are valid and we will be using it in the next cycle. */
+            }
+        }
+    }
+    
+    return result;
 }
 
 - (void)layoutSubviews {
@@ -206,12 +252,25 @@
 			columnCount = self.columnCount;
 		}
 		
-		CGFloat segmentWidth = width / columnCount;
-		CGFloat buttonOffsetX = 0;
+        NSArray *proportions = [self proportionsForRow:row columnCount:columnCount];
+        CGFloat buttonOffsetX = 0;
 		
 		for (NSUInteger col = 0; col < columnCount; col++) {
 			
 			SCRSegment *segment = [SCRSegment segmentWithStyle:SCRSegmentCenter];
+            
+            float currentProportion;
+            
+            if (proportions)
+            {
+                currentProportion = [[proportions objectAtIndex:col] floatValue];
+            }
+            else
+            {
+                currentProportion = (width / columnCount) / width;
+            }
+            
+            CGFloat segmentWidth = width * currentProportion;
 			
 			segment.colorScheme = self.colorScheme;
 			segment.frame = CGRectMake(buttonOffsetX, segmentOffsetY, segmentWidth, kRowHeight);
