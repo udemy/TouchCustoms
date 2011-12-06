@@ -11,7 +11,6 @@
 @implementation UIApplication (LocalNotifications)
 
 + (void)showLocalNotification:(NSString *)text {
-	
 	[UIApplication showLocalNotification:text actionButton:nil];
 }
 
