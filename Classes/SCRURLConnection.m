@@ -43,11 +43,15 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 
 - (void)dealloc
 {
+    SCR_RELEASE_SAFELY(_completedHandler);
+    SCR_RELEASE_SAFELY(_failedHandler);
+    
+    [_connection cancel];
+    
     SCR_RELEASE_SAFELY(_connection);
     SCR_RELEASE_SAFELY(_data);
     SCR_RELEASE_SAFELY(_response);
-    SCR_RELEASE_SAFELY(_completedHandler);
-    SCR_RELEASE_SAFELY(_failedHandler);
+
     
     [super dealloc];
 }
