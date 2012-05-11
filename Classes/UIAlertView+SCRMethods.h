@@ -9,9 +9,21 @@
 //	Extension methods for UIAlertView.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface UIAlertView (SCRMethods)
+
+/**
+ * @remarks
+ *		The UIAlertView creation method lets you keep the dialog localized in case you provide translation
+ *		for "Yes" and "No" strings in your Localizable.strings file.
+ */
++ (void)showYesNoAlertWithMessage:(NSString *)message delegate:(id)delegate;
+
+/**
+ * @remarks
+ *		The UIAlertView creation method lets you keep the dialog localized in case you provide translation
+ *		for "Yes" and "No" strings in your Localizable.strings file.
+ */
++ (UIAlertView *)yesNoAlertViewWithMessage:(NSString *)message delegate:(id)delegate;
 
 /**
   * Uses [error localizedFailureReason] as UIAlertView title and [error localizedDescription] as its message.
