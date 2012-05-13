@@ -22,9 +22,7 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
         _failedHandler = [failedHandler copy];
         
         _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        
-        if (!_connection)
-        {
+        if (!_connection) {
             NSError *error = [NSError errorWithDomain:kSCRURLConnectionDomain code:SCRURLConnectionFailedToInitialize
                                              userInfo:nil];
             [self reportError:error];
@@ -66,12 +64,10 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 
 - (void)reportError:(NSError *)error
 {
-    if (!_failed)
-    {
+    if (!_failed) {
         _failed = YES;
         
-        if (_failedHandler)
-        {
+        if (_failedHandler) {
             _failedHandler(self, error);
         }
     }
@@ -86,20 +82,16 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
     
     long long expectedContentLength = response.expectedContentLength;
     
-    if (expectedContentLength > NSUIntegerMax)
-    {
+    if (expectedContentLength > NSUIntegerMax) {
         [self cancel];
     }
-    else
-    {
+    else {
         NSUInteger capacity;
         
-        if (expectedContentLength < 0)
-        {
+        if (expectedContentLength < 0) {
             capacity = 1024;
         }
-        else
-        {
+        else {
             capacity = (NSUInteger)expectedContentLength;
         }
         
@@ -114,8 +106,7 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    if (_completedHandler)
-    {
+    if (_completedHandler) {
         _completedHandler(self, _response, _data);
     }
 }
