@@ -11,17 +11,23 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 
 @implementation SCRURLConnection
 
+@synthesize name;
+
 - (id)initWithRequest:(NSURLRequest *)request completedHandler:(SCRURLCompletedHandler)completedHandler
         failedHandler:(SCRURLFailedHandler)failedHandler {
     
     self = [super init];
     
     if (self) {
-        
         _completedHandler = [completedHandler copy];
         _failedHandler = [failedHandler copy];
         
+        if (self.name)
+            NSLog(@"[%@] Before NSURLConnection::initWithRequest: %d", self.name, [self retainCount]); 
         _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        if (self.name) 
+            NSLog(@"[%@] After NSURLConnection::initWithRequest: %d", self.name, [self retainCount]);
         if (!_connection) {
             NSError *error = [NSError errorWithDomain:kSCRURLConnectionDomain code:SCRURLConnectionFailedToInitialize
                                              userInfo:nil];
@@ -35,8 +41,9 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 - (id)initWithURL:(NSURL *)url timeoutInterval:(NSTimeInterval)timeoutInterval
  completedHandler:(SCRURLCompletedHandler)completedHandler failedHandler:(SCRURLFailedHandler)failedHandler
 {
-    return [self initWithRequest:[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                              timeoutInterval:timeoutInterval] completedHandler:completedHandler failedHandler:failedHandler];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                         timeoutInterval:timeoutInterval];
+    return [self initWithRequest:request completedHandler:completedHandler failedHandler:failedHandler];
 }
 
 - (void)dealloc
@@ -44,22 +51,23 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
     SCR_RELEASE_SAFELY(_completedHandler);
     SCR_RELEASE_SAFELY(_failedHandler);
     
-    [_connection cancel];
-    
     SCR_RELEASE_SAFELY(_connection);
+    
     SCR_RELEASE_SAFELY(_data);
     SCR_RELEASE_SAFELY(_response);
-
     
+    self.name = nil;
+
     [super dealloc];
 }
 
 - (void)cancel
 {
-    [_connection cancel];
-    
     NSError *error = [NSError errorWithDomain:kSCRURLConnectionDomain code:SCRURLConnectionCancelled userInfo:nil];
     [self reportError:error];
+    
+    [_connection cancel];
+    SCR_RELEASE_SAFELY(_connection);
 }
 
 - (void)reportError:(NSError *)error
@@ -106,6 +114,8 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    if (self.name)
+        NSLog(@"[%@] didFinishLoading: %d", self.name, [self retainCount]);
     if (_completedHandler) {
         _completedHandler(self, _response, _data);
     }
@@ -118,7 +128,6 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 }
 
 @end
-
 
 @implementation NSError (SCRURLConnectionExtensions)
 

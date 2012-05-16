@@ -25,6 +25,8 @@ typedef void (^ SCRURLFailedHandler)(SCRURLConnection *connection, NSError *erro
     BOOL _failed;
 }
 
+@property (nonatomic, copy) NSString *name;
+
 - (id)initWithRequest:(NSURLRequest *)request completedHandler:(SCRURLCompletedHandler)completedHandler
         failedHandler:(SCRURLFailedHandler)failedHandler;
 - (id)initWithURL:(NSURL *)url timeoutInterval:(NSTimeInterval)timeoutInterval
