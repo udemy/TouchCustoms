@@ -14,20 +14,16 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 @synthesize name;
 
 - (id)initWithRequest:(NSURLRequest *)request completedHandler:(SCRURLCompletedHandler)completedHandler
-        failedHandler:(SCRURLFailedHandler)failedHandler {
-    
+        failedHandler:(SCRURLFailedHandler)failedHandler
+{
     self = [super init];
     
     if (self) {
         _completedHandler = [completedHandler copy];
         _failedHandler = [failedHandler copy];
-        
-        if (self.name)
-            NSLog(@"[%@] Before NSURLConnection::initWithRequest: %d", self.name, [self retainCount]); 
+         
         _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         
-        if (self.name) 
-            NSLog(@"[%@] After NSURLConnection::initWithRequest: %d", self.name, [self retainCount]);
         if (!_connection) {
             NSError *error = [NSError errorWithDomain:kSCRURLConnectionDomain code:SCRURLConnectionFailedToInitialize
                                              userInfo:nil];
@@ -114,8 +110,6 @@ NSString *const kSCRURLConnectionDomain = @"com.screencustoms.SCRURLConnection.E
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    if (self.name)
-        NSLog(@"[%@] didFinishLoading: %d", self.name, [self retainCount]);
     if (_completedHandler) {
         _completedHandler(self, _response, _data);
     }
