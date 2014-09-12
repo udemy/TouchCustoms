@@ -66,7 +66,7 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 	SCR_LOG_INFO(CAT, @"Sample rate: %f", format.mSampleRate);
 	
 	format.mChannelsPerFrame = [[AVAudioSession sharedInstance] currentHardwareInputNumberOfChannels];
-	SCR_LOG_INFO(CAT, @"Channels: %d", format.mChannelsPerFrame);
+	SCR_LOG_INFO(CAT, @"Channels: %d", (unsigned int)format.mChannelsPerFrame);
 	
 	format.mFormatID = kAudioFormatLinearPCM;
 	format.mFormatFlags = kLinearPCMFormatFlagIsBigEndian | kLinearPCMFormatFlagIsSignedInteger | kLinearPCMFormatFlagIsPacked;
