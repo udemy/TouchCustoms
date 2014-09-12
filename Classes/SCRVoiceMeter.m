@@ -65,7 +65,7 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 	format.mSampleRate = [[AVAudioSession sharedInstance] currentHardwareSampleRate];
 	SCR_LOG_INFO(CAT, @"Sample rate: %f", format.mSampleRate);
 	
-	format.mChannelsPerFrame = [[AVAudioSession sharedInstance] currentHardwareInputNumberOfChannels];
+	format.mChannelsPerFrame = (UInt32)[[AVAudioSession sharedInstance] currentHardwareInputNumberOfChannels];
 	SCR_LOG_INFO(CAT, @"Channels: %d", (unsigned int)format.mChannelsPerFrame);
 	
 	format.mFormatID = kAudioFormatLinearPCM;
@@ -92,7 +92,7 @@ static UInt32 DeriveBufferSize(AudioQueueRef audioQueue, const AudioStreamBasicD
 						   @"Cannot enable metering.");
 	
 	bufferByteSize = DeriveBufferSize(queue, &format, kSCVoiceMeterBufferForTime);
-	SCR_LOG_TRACE(CAT, @"bufferByteSize = %d", bufferByteSize);
+	SCR_LOG_TRACE(CAT, @"bufferByteSize = %d", (unsigned int)bufferByteSize);
 	
 	for (NSUInteger i = 0; i < kSCVoiceMeterBufferNumber; ++i) {
 		

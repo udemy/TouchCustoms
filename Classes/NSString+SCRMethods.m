@@ -32,7 +32,7 @@
 
 + (NSString *)stringFromInteger:(NSInteger)anInteger {
 	
-	return [NSString stringWithFormat:@"%d", anInteger];
+	return [NSString stringWithFormat:@"%ld", (long)anInteger];
 }
 
 + (NSString *)stringFromDouble:(double)aDouble {
